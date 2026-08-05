@@ -1,0 +1,98 @@
+/* ==========================================
+   ESTILOS - GUIA DIGITAL DO IDOSO
+   Foco em Acessibilidade e Legibilidade
+   ========================================== */
+
+/* Reset básico para padronizar navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configurações de corpo e fonte grandes */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F0F4F8;
+  color: #1A202C;
+  font-size: 20px; /* Tamanho ampliado para fácil leitura */
+  line-height: 1.6;
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho com alto contraste */
+.cabecalho {
+  background-color: #0F172A;
+  color: #FFFFFF;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cabecalho h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  font-size: 18px;
+  color: #CBD5E1;
+}
+
+/* Cartões de dicas com bordas destacadas */
+.cartao-dica {
+  background-color: #FFFFFF;
+  border: 3px solid #CBD5E1;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cartao-dica h2 {
+  font-size: 22px;
+  color: #1E293B;
+  margin-bottom: 10px;
+}
+
+.cartao-dica p {
+  font-size: 18px;
+  color: #334155;
+}
+
+/* Destaques amarelos para alertas */
+.alerta-importante {
+  background-color: #FEF3C7;
+  border-left: 6px solid #D97706;
+  padding: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 4px;
+  color: #78350F;
+}
+
+/* Botão grande para facilitado ao toque com o dedo */
+.btn-ligar {
+  display: block;
+  width: 100%;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-top: 24px;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Efeito visual ao clicar ou passar o mouse */
+.btn-ligar:hover,
+.btn-ligar:active {
+  background-color: #1D4ED8;
+}
