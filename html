@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SêniorSeguro - Tela Inicial</title>
+  <title>TreinoSeguro - Pratique para Não Cair em Golpes</title>
   <style>
-    /* Reset básico e configurações de acessibilidade */
+    /* Reset e base acessível */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,109 +14,121 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #F8F9FA;
-      color: #111111;
-      font-size: 20px; /* Tamanho base aumentado */
-      line-height: 1.5;
+      background-color: #F3F4F6;
+      color: #1F2937;
+      font-size: 20px;
+      line-height: 1.6;
       padding: 16px;
-      max-width: 500px;
+      max-width: 550px;
       margin: 0 auto;
     }
 
-    /* Cabeçalho de alto contraste */
     header {
-      background-color: #0B3C5D;
+      background-color: #1E3A8A;
       color: #FFFFFF;
       text-align: center;
-      padding: 20px 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      padding: 24px 16px;
+      border-radius: 16px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: 30px;
-      margin-bottom: 5px;
+      font-size: 28px;
+      margin-bottom: 8px;
     }
 
-    .subtitulo {
-      font-size: 20px;
-      color: #F0F0F0;
-    }
-
-    /* Botão de leitura em voz alta */
-    .btn-voz {
-      width: 100%;
-      background-color: #E2E8F0;
-      color: #0B3C5D;
-      border: 3px solid #0B3C5D;
-      border-radius: 12px;
+    .instrucao {
+      background-color: #EFF6FF;
+      border-left: 6px solid #1D4ED8;
       padding: 16px;
-      font-size: 20px;
-      font-weight: bold;
+      border-radius: 8px;
       margin-bottom: 24px;
-      cursor: pointer;
-      text-align: center;
+      font-size: 19px;
     }
 
-    /* Seção principal de botões */
-    main {
+    /* Lista de Exercícios */
+    .quiz-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    .cartao {
+    .cartao-quiz {
       background-color: #FFFFFF;
       border: 3px solid #D1D5DB;
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
 
-    .cartao h2 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .cartao p {
-      font-size: 18px;
-      color: #333333;
-      margin-bottom: 16px;
-    }
-
-    /* Botões grandes de ação */
-    .btn-acao {
-      display: block;
-      width: 100%;
-      padding: 20px;
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
+    .mensagem-fake {
+      background-color: #FEF3C7;
+      border: 2px dashed #D97706;
+      padding: 16px;
       border-radius: 12px;
-      border: none;
+      margin: 16px 0;
+      font-family: monospace, sans-serif;
+      font-size: 18px;
+      color: #78350F;
+    }
+
+    /* Revelação da resposta usando apenas HTML/CSS (<details>) */
+    details {
+      margin-top: 16px;
+    }
+
+    summary {
+      background-color: #2563EB;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
       cursor: pointer;
+      list-style: none; /* Esconde a seta padrão do navegador */
     }
 
-    /* Cores intencionais por função */
-    .btn-verificar {
-      background-color: #15803D; /* Verde de confirmação */
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .resposta {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 19px;
+    }
+
+    .resposta-golpe {
+      background-color: #FEE2E2;
+      border: 2px solid #DC2626;
+      color: #991B1B;
+    }
+
+    .resposta-segura {
+      background-color: #DCFCE7;
+      border: 2px solid #16A34A;
+      color: #166534;
+    }
+
+    .tag {
+      display: inline-block;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .tag-golpe {
+      background-color: #DC2626;
       color: #FFFFFF;
     }
 
-    .btn-aprender {
-      background-color: #1D4ED8; /* Azul para aprendizado */
-      color: #FFFFFF;
-    }
-
-    /* Cartão de Emergência com destaque visual */
-    .cartao-emergencia {
-      background-color: #FEF2F2;
-      border: 3px solid #DC2626;
-    }
-
-    .btn-emergencia {
-      background-color: #DC2626; /* Vermelho para alerta/ajuda */
+    .tag-seguro {
+      background-color: #16A34A;
       color: #FFFFFF;
     }
   </style>
@@ -124,36 +136,64 @@
 <body>
 
   <header>
-    <h1>SêniorSeguro</h1>
-    <p class="subtitulo">Seu assistente de proteção digital</p>
+    <h1>🎯 TreinoSeguro</h1>
+    <p>Aprenda a reconhecer golpes na prática</p>
   </header>
 
-  <!-- Recurso visual de acessibilidade por áudio -->
-  <button class="btn-voz">
-    🔊 Ouvir o texto desta tela
-  </button>
+  <section class="instrucao">
+    👉 <strong>Como jogar:</strong> Leia a mensagem exibida na caixa amarela e tente adivinhar se é verdadeira ou golpe. Depois, toque no botão para ver a resposta.
+  </section>
 
-  <main>
-    <!-- Módulo 1: Verificador -->
-    <section class="cartao">
-      <h2>🔍 Checar Mensagem</h2>
-      <p>Recebeu um link ou mensagem estranha no WhatsApp? Analise aqui antes de clicar.</p>
-      <button class="btn-acao btn-verificar">Analise aqui</button>
-    </section>
+  <main class="quiz-container">
 
-    <!-- Módulo 2: Aprendizado -->
-    <section class="cartao">
-      <h2>📚 Guia Antigolpes</h2>
-      <p>Aprenda a reconhecer as fraudes mais comuns com explicações fáceis.</p>
-      <button class="btn-acao btn-aprender">Ver Dicas</button>
-    </section>
+    <!-- Exercício 1 -->
+    <article class="cartao-quiz">
+      <h2>Caso 1: Mensagem no SMS</h2>
+      <div class="mensagem-fake">
+        "Banco X: Seu cartão foi bloqueado por suspeita de fraude. Clique no link para reativar: http://bancox-seguro.com"
+      </div>
 
-    <!-- Módulo 3: Emergência -->
-    <section class="cartao cartao-emergencia">
-      <h2>🆘 Precisa de Ajuda?</h2>
-      <p>Está em dúvida ou acha que caiu em um golpe? Chame seu familiar cadastrado.</p>
-      <button class="btn-acao btn-emergencia">Pedir Ajuda</button>
-    </section>
+      <details>
+        <summary>Toque aqui para ver se é GOLPE!</summary>
+        <div class="resposta resposta-golpe">
+          <span class="tag tag-golpe">🚨 É GOLPE!</span>
+          <p><strong>Por que é perigoso?</strong> Bancos nunca enviam links por SMS para desbloquear cartões. Nunca clique em links assim.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- Exercício 2 -->
+    <article class="cartao-quiz">
+      <h2>Caso 2: Mensagem no WhatsApp</h2>
+      <div class="mensagem-fake">
+        "Oi mãe, troquei de número! Salva meu contato novo aí. Preciso pagar uma conta urgente hoje, pode me transferir um Pix?"
+      </div>
+
+      <details>
+        <summary>Toque aqui para ver se é GOLPE!</summary>
+        <div class="resposta resposta-golpe">
+          <span class="tag tag-golpe">🚨 É GOLPE!</span>
+          <p><strong>Por que é perigoso?</strong> Golpe do Falso Parente. Antes de transferir qualquer valor, ligue para o número antigo do seu familiar para confirmar se é ele mesmo.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- Exercício 3 -->
+    <article class="cartao-quiz">
+      <h2>Caso 3: Código por SMS</h2>
+      <div class="mensagem-fake">
+        "Seu código de verificação do WhatsApp é: 482-901. Não compartilhe este código com ninguém."
+      </div>
+
+      <details>
+        <summary>Toque aqui para ver se é GOLPE!</summary>
+        <div class="resposta resposta-segura">
+          <span class="tag tag-seguro">✅ MENSAGEM REAL</span>
+          <p><strong>Atenção:</strong> A mensagem em si é real, mas você <strong>NUNCA</strong> deve passar esse número de 6 dígitos para nenhuma pessoa que pedir por telefone ou mensagem.</p>
+        </div>
+      </details>
+    </article>
+
   </main>
 
 </body>
