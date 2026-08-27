@@ -1,78 +1,124 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SêniorSeguro - Guia de Segurança</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+  --bg-color: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --text-main: #0F172A;
+  --primary: #1E40AF;
+  --primary-hover: #1D4ED8;
+  --danger: #B91C1C;
+  --danger-hover: #991B1B;
+  --border-color: #CBD5E1;
+}
 
-  <header role="banner">
-    <h1>SêniorSeguro</h1>
-    <p>Proteção e Dicas Práticas</p>
-  </header>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <main>
-    <a href="tel:08000000000" class="btn-emergency" aria-label="Ligar para um familiar de emergência">
-      📞 PEDIR AJUDA A UM FAMILIAR
-    </a>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-    <div class="tab-wrapper">
-      <div class="tab-list" role="tablist" aria-label="Categorias de segurança">
-        <button id="tab-1" class="tab-button" role="tab" aria-selected="true" aria-controls="content1">Golpes</button>
-        <button id="tab-2" class="tab-button" role="tab" aria-selected="false" aria-controls="content2" tabindex="-1">Senhas</button>
-      </div>
+header {
+  text-align: center;
+  padding: 24px 16px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-      <article id="content1" class="tab-content" role="tabpanel" aria-labelledby="tab-1">
-        <h2>Golpe do WhatsApp</h2>
-        <p>Recebeu uma mensagem de um número novo dizendo ser seu filho ou neto pedindo dinheiro?</p>
-        <div class="alert-box">
-          <strong>⚠️ O QUE FAZER:</strong> Não envie dinheiro. Ligue imediatamente para o número antigo do seu familiar para confirmar.
-        </div>
-      </article>
+header h1 {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
 
-      <article id="content2" class="tab-content" role="tabpanel" aria-labelledby="tab-2" hidden>
-        <h2>Senhas Fáceis e Seguras</h2>
-        <p>Evite usar datas de nascimento, telefones ou nomes de familiares diretos.</p>
-        <div class="tip-box">
-          <strong>💡 DICA DE OURO:</strong> Crie uma frase completa como senha. Exemplo: <em>"MeuCaoTomComiaBiscoito2026!"</em>
-        </div>
-      </article>
-    </div>
+.btn-emergency {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: var(--danger);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    <section class="card-section">
-      <h2>Ligações de Banco</h2>
-      <p>O banco nunca liga pedindo sua senha, nem pede para você fazer transferências para resolver problemas.</p>
-      <div class="alert-box">
-        <strong>❌ SE LIGAREM:</strong> Desligue o telefone na hora. Não converse.
-      </div>
-    </section>
-  </main>
+.btn-emergency:focus, .btn-emergency:hover {
+  background-color: var(--danger-hover);
+  outline: 4px solid #FCA5A5;
+}
 
-  <script>
-    const tabs = document.querySelectorAll('[role="tab"]');
-    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+.tab-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => {
-          t.setAttribute('aria-selected', 'false');
-          t.setAttribute('tabindex', '-1');
-        });
+.tab-button {
+  flex: 1;
+  padding: 16px;
+  background-color: #E2E8F0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid var(--border-color);
+}
 
-        tabPanels.forEach(p => p.hidden = true);
+.tab-button[aria-selected="true"] {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
 
-        tab.setAttribute('aria-selected', 'true');
-        tab.removeAttribute('tabindex');
+.tab-button:focus {
+  outline: 4px solid #93C5FD;
+}
 
-        const activePanel = document.getElementById(tab.getAttribute('aria-controls'));
-        if (activePanel) {
-          activePanel.hidden = false;
-        }
-      });
-    });
-  </script>
+.tab-content, .card-section {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-</body>
-</html>
+.tab-content[hidden] {
+  display: none;
+}
+
+.alert-box {
+  background-color: #FEF2F2;
+  border-left: 8px solid var(--danger);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+.tip-box {
+  background-color: #EFF6FF;
+  border-left: 8px solid var(--primary);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
