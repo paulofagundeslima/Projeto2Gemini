@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia Digital do Idoso</title>
+  <title>SêniorSeguro - Guia de Segurança</title>
   <style>
-    /* Reset básico */
+    /* Configurações Globais de Acessibilidade */
+    :root {
+      --bg-color: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --primary: #1E40AF;
+      --primary-hover: #1D4ED8;
+      --danger: #B91C1C;
+      --border-color: #CBD5E1;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,119 +23,175 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #F0F4F8;
-      color: #1A202C;
-      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px; /* Fonte ampliada para facilidade de leitura */
       line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       padding: 16px;
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* Cabeçalho principal */
-    .cabecalho {
-      background-color: #0F172A;
-      color: #FFFFFF;
-      padding: 24px;
-      border-radius: 16px;
+    /* Cabeçalho de Alto Contraste */
+    header {
       text-align: center;
+      padding: 24px 16px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-radius: 12px;
       margin-bottom: 20px;
     }
 
-    .cabecalho h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 4px;
     }
 
-    .subtitulo {
-      font-size: 18px;
-      color: #CBD5E1;
-    }
-
-    /* Cartões de dicas */
-    .cartao-dica {
-      background-color: #FFFFFF;
-      border: 3px solid #CBD5E1;
-      border-radius: 16px;
+    /* Botão de Emergência com Área de Toque Expandida */
+    .btn-emergency {
+      display: block;
+      width: 100%;
       padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      color: #FFFFFF;
+      background-color: var(--danger);
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-emergency:focus, .btn-emergency:hover {
+      background-color: #991B1B;
+      outline: 4px solid #FCA5A5;
+    }
+
+    /* Sistema de Abas Navegável Apenas com CSS */
+    .tab-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .tab-labels {
+      display: flex;
+      gap: 8px;
       margin-bottom: 16px;
     }
 
-    .cartao-dica h2 {
-      font-size: 22px;
-      color: #1E293B;
-      margin-bottom: 10px;
-    }
-
-    .cartao-dica p {
-      font-size: 18px;
-      color: #334155;
-    }
-
-    /* Destaques de atenção */
-    .alerta-importante {
-      background-color: #FEF3C7;
-      border-left: 6px solid #D97706;
-      padding: 12px;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 17px;
-      border-radius: 4px;
-      color: #78350F;
-    }
-
-    /* Botão de atalho */
-    .btn-ligar {
-      display: block;
-      width: 100%;
-      background-color: #2563EB;
-      color: #FFFFFF;
+    .tab-label {
+      flex: 1;
+      padding: 16px;
+      background-color: #E2E8F0;
       text-align: center;
-      padding: 18px;
-      font-size: 20px;
       font-weight: bold;
-      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 3px solid var(--border-color);
+    }
+
+    #tab1:checked ~ .tab-labels label[for="tab1"],
+    #tab2:checked ~ .tab-labels label[for="tab2"] {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+      background-color: var(--card-bg);
+      border: 3px solid var(--border-color);
       border-radius: 12px;
-      margin-top: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2 {
+      display: block;
+    }
+
+    /* Destaques de Segurança */
+    .alert-box {
+      background-color: #FEF2F2;
+      border-left: 8px solid var(--danger);
+      padding: 16px;
+      margin-top: 16px;
+      border-radius: 4px;
+    }
+
+    .tip-box {
+      background-color: #EFF6FF;
+      border-left: 8px solid var(--primary);
+      padding: 16px;
+      margin-top: 16px;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      color: var(--primary);
     }
   </style>
 </head>
 <body>
 
-  <header class="cabecalho">
-    <h1>📱 Guia Digital</h1>
-    <p class="subtitulo">Regras de Ouro para sua Segurança</p>
+  <header role="banner">
+    <h1>SêniorSeguro</h1>
+    <p>Proteção e Dicas Práticas</p>
   </header>
 
   <main>
-    <article class="cartao-dica">
-      <h2>🔑 1. Senhas Seguras</h2>
-      <p>Nunca use sua data de nascimento ou números em sequência (como 1234) como senha.</p>
-      <div class="alerta-importante">
-        💡 Dica: Anote suas senhas em um caderno mantido em casa, nunca no celular.
+    <!-- Botão de Ação Rápida -->
+    <a href="tel:08000000000" class="btn-emergency" aria-label="Ligar para um familiar de emergência">
+      📞 PEDIR AJUDA A UM FAMILIAR
+    </a>
+
+    <!-- Seletor de Conteúdo via CSS -->
+    <div class="tab-wrapper">
+      <input type="radio" id="tab1" name="tabs" checked>
+      <input type="radio" id="tab2" name="tabs">
+
+      <div class="tab-labels" role="tablist">
+        <label for="tab1" class="tab-label" tabindex="0">Golpes</label>
+        <label for="tab2" class="tab-label" tabindex="0">Senhas</label>
       </div>
-    </article>
 
-    <article class="cartao-dica">
-      <h2>💬 2. Regra do WhatsApp</h2>
-      <p>Se algum familiar pedir dinheiro por mensagem, ligue para o número antigo dele antes de transferir qualquer valor.</p>
-    </article>
+      <!-- Aba 1: Golpes -->
+      <article id="content1" class="tab-content" role="tabpanel">
+        <h2>Golpe do WhatsApp</h2>
+        <p>Recebeu uma mensagem de um número novo dizendo ser seu filho ou neto pedindo dinheiro?</p>
+        <div class="alert-box">
+          <strong>⚠️ O QUE FAZER:</strong> Não envie dinheiro. Ligue imediatamente para o número antigo do seu familiar para confirmar.
+        </div>
+      </article>
 
-    <article class="cartao-dica">
-      <h2>🏦 3. Chamadas de Banco</h2>
-      <p>Bancos nunca ligam solicitando a instalação de aplicativos ou transferências para "proteger" a conta.</p>
-      <div class="alerta-importante">
-        🚨 Recebeu uma ligação assim? Desligue imediatamente!
+      <!-- Aba 2: Senhas -->
+      <article id="content2" class="tab-content" role="tabpanel">
+        <h2>Senhas Fáceis e Seguras</h2>
+        <p>Evite usar datas de nascimento, telefones ou nomes de familiares diretos.</p>
+        <div class="tip-box">
+          <strong>💡 DICA DE OURO:</strong> Crie uma frase completa como senha. Exemplo: <em>"MeuCaoTomComiaBiscoito2026!"</em>
+        </div>
+      </article>
+    </div>
+
+    <section class="tab-content" style="display: block;">
+      <h2>Ligações de Banco</h2>
+      <p>O banco nunca liga pedindo sua senha, nem pede para você fazer transferências para resolver problemas.</p>
+      <div class="alert-box">
+        <strong>❌ SE LIGAREM:</strong> Desligue o telefone na hora. Não converse.
       </div>
-    </article>
-
-    <article class="cartao-dica">
-      <h2>📶 4. Redes de Wi-Fi</h2>
-      <p>Evite abrir aplicativos de banco quando estiver usando a internet gratuita de praças, shoppings ou ônibus.</p>
-    </article>
-
-    <a href="tel:190" class="btn-ligar">📞 Ligar para Emergência</a>
+    </section>
   </main>
 
 </body>
