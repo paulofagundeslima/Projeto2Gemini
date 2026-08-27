@@ -3,55 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SêniorSeguro - Guia de Segurança</title>
+  <title>Segurança Digital - Guia para Idosos</title>
+  <!-- Vinculação do arquivo CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header role="banner">
-    <h1>SêniorSeguro</h1>
-    <p>Proteção e Dicas Práticas</p>
+  <header class="cabecalho">
+    <div class="conteudo-cabecalho">
+      <span class="icone-cabecalho" aria-hidden="true">🛡️</span>
+      <h1>Guia Amigo: Segurança na Internet</h1>
+      <p>Dicas simples e práticas para você usar o celular e o computador com tranquilidade.</p>
+    </div>
   </header>
 
-  <main>
-    <a href="tel:08000000000" class="btn-emergency" aria-label="Ligar para um familiar de emergência">
-      📞 PEDIR AJUDA A UM FAMILIAR
-    </a>
-
-    <div class="tab-wrapper">
-      <input type="radio" id="tab1" name="tabs" checked>
-      <input type="radio" id="tab2" name="tabs">
-
-      <div class="tab-labels" role="tablist">
-        <label for="tab1" class="tab-label">Golpes</label>
-        <label for="tab2" class="tab-label">Senhas</label>
-      </div>
-
-      <article id="content1" class="tab-content" role="tabpanel">
-        <h2>Golpe do WhatsApp</h2>
-        <p>Recebeu uma mensagem de um número novo dizendo ser seu filho ou neto pedindo dinheiro?</p>
-        <div class="alert-box">
-          <strong>⚠️ O QUE FAZER:</strong> Não envie dinheiro. Ligue imediatamente para o número antigo do seu familiar para confirmar.
-        </div>
-      </article>
-
-      <article id="content2" class="tab-content" role="tabpanel">
-        <h2>Senhas Fáceis e Seguras</h2>
-        <p>Evite usar datas de nascimento, telefones ou nomes de familiares diretos.</p>
-        <div class="tip-box">
-          <strong>💡 DICA DE OURO:</strong> Crie uma frase completa como senha. Exemplo: <em>"MeuCaoTomComiaBiscoito2026!"</em>
-        </div>
-      </article>
+  <main class="conteudo-principal">
+    
+    <div class="barra-acessibilidade">
+      <p class="legenda-acessibilidade">✨ Layout adaptado com texto amplo, alto contraste e leitura facilitada.</p>
     </div>
 
-    <section class="card-section">
-      <h2>Ligações de Banco</h2>
-      <p>O banco nunca liga pedindo sua senha, nem pede para você fazer transferências para resolver problemas.</p>
-      <div class="alert-box">
-        <strong>❌ SE LIGAREM:</strong> Desligue o telefone na hora. Não converse.
+    <section class="cartao">
+      <div class="cartao-cabecalho">
+        <span class="emoji-cartao" aria-hidden="true">💬</span>
+        <h2>1. Cuidado com pedidos de dinheiro no WhatsApp</h2>
+      </div>
+      <div class="cartao-corpo">
+        <p>Se algum familiar ou amigo mandar mensagem pedindo dinheiro emprestado, PIX urgente ou pagamento de conta, <strong>não pague imediatamente</strong>.</p>
+        <p class="dica-destaque"><strong>O que fazer:</strong> Ligue para o número comum da pessoa (ligação telefônica normal) para confirmar se é realmente ela antes de fazer qualquer transferência.</p>
       </div>
     </section>
+
+    <section class="cartao">
+      <div class="cartao-cabecalho">
+        <span class="emoji-cartao" aria-hidden="true">🔗</span>
+        <h2>2. Não clique em links desconhecidos</h2>
+      </div>
+      <div class="cartao-corpo">
+        <p>Evite abrir links (endereços de sites) enviados por números estranhos ou mensagens prometendo prêmios, sorteios, cestas básicas ou descontos.</p>
+        <p class="dica-destaque"><strong>Fique atento:</strong> Bancos, INSS e órgãos do governo não enviam links por WhatsApp ou SMS pedindo atualização de cadastro.</p>
+      </div>
+    </section>
+
+    <section class="cartao cartao-alerta">
+      <div class="cartao-cabecalho">
+        <span class="emoji-cartao" aria-hidden="true">🔑</span>
+        <h2>3. Senhas seguras e fáceis de lembrar</h2>
+      </div>
+      <div class="cartao-corpo">
+        <p>Crie senhas usando frases curtas que você goste, misturando letras e números (exemplo: <em>CafeComLeite2024</em>). Evite usar sua data de nascimento.</p>
+        <p class="dica-destaque"><strong>Dica de ouro:</strong> É perfeitamente seguro anotar suas senhas em um caderno físico mantido em um local reservado na sua casa.</p>
+      </div>
+    </section>
+
+    <section class="cartao">
+      <div class="cartao-cabecalho">
+        <span class="emoji-cartao" aria-hidden="true">🤝</span>
+        <h2>4. Na dúvida, peça ajuda a alguém de confiança</h2>
+      </div>
+      <div class="cartao-corpo">
+        <p>Sempre que aparecer uma mensagem estranha na tela, uma ligação cobrando algo desconhecido ou um aviso de bloqueio de conta:</p>
+        <p class="dica-destaque"><strong>Respire fundo:</strong> Peça ajuda a um filho, neto ou amigo próximo antes de clicar em qualquer botão.</p>
+      </div>
+    </section>
+
+    <section class="cartao cartao-resumo">
+      <h2>Lembre-se sempre:</h2>
+      <ul class="lista-regras">
+        <li>Nunca envie códigos recebidos por SMS para outras pessoas.</li>
+        <li>Bancos não ligam pedindo para realizar PIX de teste ou segurança.</li>
+        <li>Golpistas costumam usar urgência para assustar. Mantenha a calma.</li>
+      </ul>
+    </section>
+
   </main>
+
+  <footer class="rodape">
+    <p><strong>Sua segurança vem em primeiro lugar. Navegue no seu próprio tempo!</strong></p>
+    <p class="subtexto-rodape">Projeto focado em acessibilidade e inclusão digital para a terceira idade.</p>
+  </footer>
 
 </body>
 </html>
