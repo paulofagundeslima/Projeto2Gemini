@@ -61,35 +61,44 @@ header h1 {
   outline: 4px solid #FCA5A5;
 }
 
-.tab-list {
+/* Sistema de Abas 100% CSS */
+.tab-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-labels {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.tab-button {
+.tab-label {
   flex: 1;
   padding: 16px;
   background-color: #E2E8F0;
-  color: var(--text-main);
-  font-size: 20px;
+  text-align: center;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   border: 3px solid var(--border-color);
 }
 
-.tab-button[aria-selected="true"] {
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"] {
   background-color: var(--primary);
   color: #FFFFFF;
   border-color: var(--primary);
 }
 
-.tab-button:focus {
-  outline: 4px solid #93C5FD;
-}
-
-.tab-content, .card-section {
+.tab-content {
+  display: none;
   background-color: var(--card-bg);
   border: 3px solid var(--border-color);
   border-radius: 12px;
@@ -97,10 +106,21 @@ header h1 {
   margin-bottom: 20px;
 }
 
-.tab-content[hidden] {
-  display: none;
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2 {
+  display: block;
 }
 
+/* Seção Fixa Fora das Abas */
+.card-section {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Caixa de Avisos e Dicas */
 .alert-box {
   background-color: #FEF2F2;
   border-left: 8px solid var(--danger);
