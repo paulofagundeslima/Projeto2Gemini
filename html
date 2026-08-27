@@ -3,198 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TreinoSeguro - Pratique para Não Cair em Golpes</title>
-  <style>
-    /* Reset e base acessível */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #F3F4F6;
-      color: #1F2937;
-      font-size: 20px;
-      line-height: 1.6;
-      padding: 16px;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    header {
-      background-color: #1E3A8A;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 24px 16px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .instrucao {
-      background-color: #EFF6FF;
-      border-left: 6px solid #1D4ED8;
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      font-size: 19px;
-    }
-
-    /* Lista de Exercícios */
-    .quiz-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .cartao-quiz {
-      background-color: #FFFFFF;
-      border: 3px solid #D1D5DB;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .mensagem-fake {
-      background-color: #FEF3C7;
-      border: 2px dashed #D97706;
-      padding: 16px;
-      border-radius: 12px;
-      margin: 16px 0;
-      font-family: monospace, sans-serif;
-      font-size: 18px;
-      color: #78350F;
-    }
-
-    /* Revelação da resposta usando apenas HTML/CSS (<details>) */
-    details {
-      margin-top: 16px;
-    }
-
-    summary {
-      background-color: #2563EB;
-      color: #FFFFFF;
-      font-weight: bold;
-      font-size: 20px;
-      padding: 16px;
-      border-radius: 12px;
-      text-align: center;
-      cursor: pointer;
-      list-style: none; /* Esconde a seta padrão do navegador */
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .resposta {
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 19px;
-    }
-
-    .resposta-golpe {
-      background-color: #FEE2E2;
-      border: 2px solid #DC2626;
-      color: #991B1B;
-    }
-
-    .resposta-segura {
-      background-color: #DCFCE7;
-      border: 2px solid #16A34A;
-      color: #166534;
-    }
-
-    .tag {
-      display: inline-block;
-      font-weight: bold;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      font-size: 16px;
-    }
-
-    .tag-golpe {
-      background-color: #DC2626;
-      color: #FFFFFF;
-    }
-
-    .tag-seguro {
-      background-color: #16A34A;
-      color: #FFFFFF;
-    }
-  </style>
+  <title>SêniorSeguro - Guia de Segurança</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>🎯 TreinoSeguro</h1>
-    <p>Aprenda a reconhecer golpes na prática</p>
+  <header role="banner">
+    <h1>SêniorSeguro</h1>
+    <p>Proteção e Dicas Práticas</p>
   </header>
 
-  <section class="instrucao">
-    👉 <strong>Como jogar:</strong> Leia a mensagem exibida na caixa amarela e tente adivinhar se é verdadeira ou golpe. Depois, toque no botão para ver a resposta.
-  </section>
+  <main>
+    <a href="tel:08000000000" class="btn-emergency" aria-label="Ligar para um familiar de emergência">
+      📞 PEDIR AJUDA A UM FAMILIAR
+    </a>
 
-  <main class="quiz-container">
-
-    <!-- Exercício 1 -->
-    <article class="cartao-quiz">
-      <h2>Caso 1: Mensagem no SMS</h2>
-      <div class="mensagem-fake">
-        "Banco X: Seu cartão foi bloqueado por suspeita de fraude. Clique no link para reativar: http://bancox-seguro.com"
+    <div class="tab-wrapper">
+      <div class="tab-list" role="tablist" aria-label="Categorias de segurança">
+        <button id="tab-1" class="tab-button" role="tab" aria-selected="true" aria-controls="content1">Golpes</button>
+        <button id="tab-2" class="tab-button" role="tab" aria-selected="false" aria-controls="content2" tabindex="-1">Senhas</button>
       </div>
 
-      <details>
-        <summary>Toque aqui para ver se é GOLPE!</summary>
-        <div class="resposta resposta-golpe">
-          <span class="tag tag-golpe">🚨 É GOLPE!</span>
-          <p><strong>Por que é perigoso?</strong> Bancos nunca enviam links por SMS para desbloquear cartões. Nunca clique em links assim.</p>
+      <article id="content1" class="tab-content" role="tabpanel" aria-labelledby="tab-1">
+        <h2>Golpe do WhatsApp</h2>
+        <p>Recebeu uma mensagem de um número novo dizendo ser seu filho ou neto pedindo dinheiro?</p>
+        <div class="alert-box">
+          <strong>⚠️ O QUE FAZER:</strong> Não envie dinheiro. Ligue imediatamente para o número antigo do seu familiar para confirmar.
         </div>
-      </details>
-    </article>
+      </article>
 
-    <!-- Exercício 2 -->
-    <article class="cartao-quiz">
-      <h2>Caso 2: Mensagem no WhatsApp</h2>
-      <div class="mensagem-fake">
-        "Oi mãe, troquei de número! Salva meu contato novo aí. Preciso pagar uma conta urgente hoje, pode me transferir um Pix?"
+      <article id="content2" class="tab-content" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <h2>Senhas Fáceis e Seguras</h2>
+        <p>Evite usar datas de nascimento, telefones ou nomes de familiares diretos.</p>
+        <div class="tip-box">
+          <strong>💡 DICA DE OURO:</strong> Crie uma frase completa como senha. Exemplo: <em>"MeuCaoTomComiaBiscoito2026!"</em>
+        </div>
+      </article>
+    </div>
+
+    <section class="card-section">
+      <h2>Ligações de Banco</h2>
+      <p>O banco nunca liga pedindo sua senha, nem pede para você fazer transferências para resolver problemas.</p>
+      <div class="alert-box">
+        <strong>❌ SE LIGAREM:</strong> Desligue o telefone na hora. Não converse.
       </div>
-
-      <details>
-        <summary>Toque aqui para ver se é GOLPE!</summary>
-        <div class="resposta resposta-golpe">
-          <span class="tag tag-golpe">🚨 É GOLPE!</span>
-          <p><strong>Por que é perigoso?</strong> Golpe do Falso Parente. Antes de transferir qualquer valor, ligue para o número antigo do seu familiar para confirmar se é ele mesmo.</p>
-        </div>
-      </details>
-    </article>
-
-    <!-- Exercício 3 -->
-    <article class="cartao-quiz">
-      <h2>Caso 3: Código por SMS</h2>
-      <div class="mensagem-fake">
-        "Seu código de verificação do WhatsApp é: 482-901. Não compartilhe este código com ninguém."
-      </div>
-
-      <details>
-        <summary>Toque aqui para ver se é GOLPE!</summary>
-        <div class="resposta resposta-segura">
-          <span class="tag tag-seguro">✅ MENSAGEM REAL</span>
-          <p><strong>Atenção:</strong> A mensagem em si é real, mas você <strong>NUNCA</strong> deve passar esse número de 6 dígitos para nenhuma pessoa que pedir por telefone ou mensagem.</p>
-        </div>
-      </details>
-    </article>
-
+    </section>
   </main>
+
+  <script>
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+
+        tabPanels.forEach(p => p.hidden = true);
+
+        tab.setAttribute('aria-selected', 'true');
+        tab.removeAttribute('tabindex');
+
+        const activePanel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (activePanel) {
+          activePanel.hidden = false;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

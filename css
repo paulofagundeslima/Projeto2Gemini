@@ -1,98 +1,124 @@
-/* ==========================================
-   ESTILOS - GUIA DIGITAL DO IDOSO
-   Foco em Acessibilidade e Legibilidade
-   ========================================== */
+:root {
+  --bg-color: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --text-main: #0F172A;
+  --primary: #1E40AF;
+  --primary-hover: #1D4ED8;
+  --danger: #B91C1C;
+  --danger-hover: #991B1B;
+  --border-color: #CBD5E1;
+}
 
-/* Reset básico para padronizar navegadores */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Configurações de corpo e fonte grandes */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #F0F4F8;
-  color: #1A202C;
-  font-size: 20px; /* Tamanho ampliado para fácil leitura */
+  font-size: 22px;
   line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   padding: 16px;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-/* Cabeçalho com alto contraste */
-.cabecalho {
-  background-color: #0F172A;
-  color: #FFFFFF;
-  padding: 24px;
-  border-radius: 16px;
+header {
   text-align: center;
+  padding: 24px 16px;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: 12px;
   margin-bottom: 20px;
 }
 
-.cabecalho h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
+header h1 {
+  font-size: 32px;
+  margin-bottom: 4px;
 }
 
-.subtitulo {
-  font-size: 18px;
-  color: #CBD5E1;
-}
-
-/* Cartões de dicas com bordas destacadas */
-.cartao-dica {
-  background-color: #FFFFFF;
-  border: 3px solid #CBD5E1;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.cartao-dica h2 {
-  font-size: 22px;
-  color: #1E293B;
-  margin-bottom: 10px;
-}
-
-.cartao-dica p {
-  font-size: 18px;
-  color: #334155;
-}
-
-/* Destaques amarelos para alertas */
-.alerta-importante {
-  background-color: #FEF3C7;
-  border-left: 6px solid #D97706;
-  padding: 12px;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 17px;
-  border-radius: 4px;
-  color: #78350F;
-}
-
-/* Botão grande para facilitado ao toque com o dedo */
-.btn-ligar {
+.btn-emergency {
   display: block;
   width: 100%;
-  background-color: #2563EB;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 18px;
-  font-size: 20px;
+  padding: 20px;
+  font-size: 22px;
   font-weight: bold;
-  text-decoration: none;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: var(--danger);
+  border: none;
   border-radius: 12px;
-  margin-top: 24px;
-  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+  text-decoration: none;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Efeito visual ao clicar ou passar o mouse */
-.btn-ligar:hover,
-.btn-ligar:active {
-  background-color: #1D4ED8;
+.btn-emergency:focus, .btn-emergency:hover {
+  background-color: var(--danger-hover);
+  outline: 4px solid #FCA5A5;
+}
+
+.tab-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 16px;
+  background-color: #E2E8F0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid var(--border-color);
+}
+
+.tab-button[aria-selected="true"] {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.tab-button:focus {
+  outline: 4px solid #93C5FD;
+}
+
+.tab-content, .card-section {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tab-content[hidden] {
+  display: none;
+}
+
+.alert-box {
+  background-color: #FEF2F2;
+  border-left: 8px solid var(--danger);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+.tip-box {
+  background-color: #EFF6FF;
+  border-left: 8px solid var(--primary);
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--primary);
 }
