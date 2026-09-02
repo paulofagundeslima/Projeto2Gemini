@@ -3,84 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segurança Digital - Guia para Idosos</title>
-  <!-- Vinculação do arquivo CSS externo -->
+  <title>Guia de Segurança Digital</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="cabecalho">
-    <div class="conteudo-cabecalho">
-      <span class="icone-cabecalho" aria-hidden="true">🛡️</span>
-      <h1>Guia Amigo: Segurança na Internet</h1>
-      <p>Dicas simples e práticas para você usar o celular e o computador com tranquilidade.</p>
-    </div>
+  <header>
+    <h1>Guia de Segurança Digital</h1>
+    <p class="subtitulo">Dicas práticas e seguras para o seu dia a dia na internet</p>
   </header>
 
-  <main class="conteudo-principal">
-    
-    <div class="barra-acessibilidade">
-      <p class="legenda-acessibilidade">✨ Layout adaptado com texto amplo, alto contraste e leitura facilitada.</p>
-    </div>
-
-    <section class="cartao">
-      <div class="cartao-cabecalho">
-        <span class="emoji-cartao" aria-hidden="true">💬</span>
-        <h2>1. Cuidado com pedidos de dinheiro no WhatsApp</h2>
-      </div>
-      <div class="cartao-corpo">
-        <p>Se algum familiar ou amigo mandar mensagem pedindo dinheiro emprestado, PIX urgente ou pagamento de conta, <strong>não pague imediatamente</strong>.</p>
-        <p class="dica-destaque"><strong>O que fazer:</strong> Ligue para o número comum da pessoa (ligação telefônica normal) para confirmar se é realmente ela antes de fazer qualquer transferência.</p>
+  <main>
+    <section class="card" aria-labelledby="dica-1">
+      <h2 id="dica-1">1. Mensagens e Links Suspeitos</h2>
+      <p>Bancos e empresas não pedem senhas nem códigos por WhatsApp ou telefone.</p>
+      <ul>
+        <li>Nunca clique em links recebidos de números desconhecidos.</li>
+        <li>Na dúvida, ligue diretamente para o número oficial da empresa.</li>
+      </ul>
+      <div class="alerta">
+        Atenção: Se a mensagem parecer urgente ou cobrar ação imediata, desconfie!
       </div>
     </section>
 
-    <section class="cartao">
-      <div class="cartao-cabecalho">
-        <span class="emoji-cartao" aria-hidden="true">🔗</span>
-        <h2>2. Não clique em links desconhecidos</h2>
-      </div>
-      <div class="cartao-corpo">
-        <p>Evite abrir links (endereços de sites) enviados por números estranhos ou mensagens prometendo prêmios, sorteios, cestas básicas ou descontos.</p>
-        <p class="dica-destaque"><strong>Fique atento:</strong> Bancos, INSS e órgãos do governo não enviam links por WhatsApp ou SMS pedindo atualização de cadastro.</p>
-      </div>
-    </section>
-
-    <section class="cartao cartao-alerta">
-      <div class="cartao-cabecalho">
-        <span class="emoji-cartao" aria-hidden="true">🔑</span>
-        <h2>3. Senhas seguras e fáceis de lembrar</h2>
-      </div>
-      <div class="cartao-corpo">
-        <p>Crie senhas usando frases curtas que você goste, misturando letras e números (exemplo: <em>CafeComLeite2024</em>). Evite usar sua data de nascimento.</p>
-        <p class="dica-destaque"><strong>Dica de ouro:</strong> É perfeitamente seguro anotar suas senhas em um caderno físico mantido em um local reservado na sua casa.</p>
-      </div>
-    </section>
-
-    <section class="cartao">
-      <div class="cartao-cabecalho">
-        <span class="emoji-cartao" aria-hidden="true">🤝</span>
-        <h2>4. Na dúvida, peça ajuda a alguém de confiança</h2>
-      </div>
-      <div class="cartao-corpo">
-        <p>Sempre que aparecer uma mensagem estranha na tela, uma ligação cobrando algo desconhecido ou um aviso de bloqueio de conta:</p>
-        <p class="dica-destaque"><strong>Respire fundo:</strong> Peça ajuda a um filho, neto ou amigo próximo antes de clicar em qualquer botão.</p>
-      </div>
-    </section>
-
-    <section class="cartao cartao-resumo">
-      <h2>Lembre-se sempre:</h2>
-      <ul class="lista-regras">
-        <li>Nunca envie códigos recebidos por SMS para outras pessoas.</li>
-        <li>Bancos não ligam pedindo para realizar PIX de teste ou segurança.</li>
-        <li>Golpistas costumam usar urgência para assustar. Mantenha a calma.</li>
+    <section class="card" aria-labelledby="dica-2">
+      <h2 id="dica-2">2. Criação de Senhas Seguras</h2>
+      <p>Uma boa senha protege suas contas de acessos não autorizados.</p>
+      <ul>
+        <li>Evite usar datas de nascimento ou nomes de parentes.</li>
+        <li>Misture letras, números e símbolos simples.</li>
+        <li>Anote suas senhas em um caderno físico guardado em local seguro.</li>
       </ul>
     </section>
 
+    <section class="card" aria-labelledby="dica-3">
+      <h2 id="dica-3">3. Compras e Pagamentos</h2>
+      <p>Mantenha suas finanças protegidas ao realizar pagamentos online.</p>
+      <ul>
+        <li>Dê preferência ao uso de cartão de crédito virtual para compras online.</li>
+        <li>Ao fazer um Pix, confira o nome de quem vai receber antes de confirmar.</li>
+      </ul>
+    </section>
+
+    <a href="tel:0800000000" class="botao-acao" aria-label="Pedir ajuda para um familiar ou suporte">
+      Precisa de ajuda? Clique para ligar
+    </a>
   </main>
 
-  <footer class="rodape">
-    <p><strong>Sua segurança vem em primeiro lugar. Navegue no seu próprio tempo!</strong></p>
-    <p class="subtexto-rodape">Projeto focado em acessibilidade e inclusão digital para a terceira idade.</p>
+  <footer>
+    <p>Conteúdo desenvolvido com foco em acessibilidade e leitura simples.</p>
   </footer>
 
 </body>
