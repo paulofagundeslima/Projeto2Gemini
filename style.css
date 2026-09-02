@@ -1,0 +1,73 @@
+/* Reset básico e tipografia acessível */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; /* Fonte base ampliada */
+  line-height: 1.6;
+  background-color: #f4f6f9;
+  color: #111111; /* Contraste máximo para texto */
+  padding: 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: #003366; /* Azul escuro de alto contraste */
+  color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.cabecalho p {
+  font-size: 1.25rem;
+}
+
+/* Container Principal */
+.conteudo-principal {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cartões de Dicas */
+.cartao-dica {
+  background-color: #ffffff;
+  border: 3px solid #003366; /* Borda espessa para facilitar a identificação visual */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-dica h2 {
+  color: #003366;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.cartao-dica p {
+  color: #222222;
+  font-size: 1.2rem;
+}
+
+/* Rodapé */
+.rodape {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #003366;
+}
