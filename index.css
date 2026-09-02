@@ -1,10 +1,11 @@
 :root {
-  --cor-fundo: #F4F6F9;
+  --cor-fundo: #EAEFE9;
   --cor-texto: #111111;
   --cor-primaria: #0A3663;
   --cor-destaque: #B71C1C;
   --cor-card: #FFFFFF;
   --cor-borda: #0A3663;
+  --cor-apoio: #FFC107;
 }
 
 * {
@@ -13,69 +14,143 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: Arial, sans-serif;
-  font-size: 1.375rem; /* 22px para facilidade de leitura */
+  font-size: 1.375rem; /* 22px */
   line-height: 1.6;
-  padding: 20px;
+  padding: 15px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 header {
   background-color: var(--cor-primaria);
   color: #FFFFFF;
-  padding: 30px 20px;
+  padding: 20px;
   text-align: center;
-  border-radius: 12px;
-  margin-bottom: 30px;
+  border-radius: 16px 16px 0 0;
 }
 
 h1 {
-  font-size: 2.25rem; /* 36px */
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 5px;
 }
 
-p.subtitulo {
-  font-size: 1.375rem;
+.subtitulo {
+  font-size: 1.2rem;
 }
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
+/* Container Estilo Catálogo Vertical */
+.catalogo-container {
+  height: 70vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  border: 4px solid var(--cor-primaria);
+  border-top: none;
+  border-bottom: none;
+  background-color: #DDE3EA;
+  padding: 15px;
 }
 
+/* Suavização de Rolamento */
+.catalogo-container::-webkit-scrollbar {
+  width: 14px;
+}
+
+.catalogo-container::-webkit-scrollbar-thumb {
+  background-color: var(--cor-primaria);
+  border-radius: 8px;
+}
+
+/* Cards do Catálogo */
 .card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   background-color: var(--cor-card);
   border: 3px solid var(--cor-borda);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  animation: subir 0.6s ease-out;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 h2 {
   color: var(--cor-primaria);
-  font-size: 1.75rem; /* 28px */
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
 }
 
 ul {
   margin-left: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .alerta {
   background-color: #FFEBEE;
   border-left: 8px solid var(--cor-destaque);
   color: #5C0000;
-  padding: 15px;
+  padding: 12px;
   border-radius: 6px;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+.botao-proximo {
+  display: block;
+  text-align: center;
+  background-color: #E8EEF5;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  padding: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
   margin-top: 15px;
+}
+
+.botao-proximo:focus,
+.botao-proximo:hover {
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
+  outline: 3px solid var(--cor-apoio);
 }
 
 .botao-acao {
@@ -84,25 +159,26 @@ li {
   background-color: var(--cor-primaria);
   color: #FFFFFF;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 16px;
+  border-radius: 10px;
   border: none;
-  cursor: pointer;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .botao-acao:focus,
 .botao-acao:hover {
   background-color: #041B33;
-  outline: 4px solid #FFC107;
+  outline: 4px solid var(--cor-apoio);
 }
 
 footer {
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
   text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 1.125rem;
+  padding: 15px;
+  border-radius: 0 0 16px 16px;
+  font-size: 1rem;
 }
