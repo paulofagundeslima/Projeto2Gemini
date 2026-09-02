@@ -1,11 +1,12 @@
 :root {
-  --cor-fundo: #EAEFE9;
-  --cor-texto: #111111;
-  --cor-primaria: #0A3663;
-  --cor-destaque: #B71C1C;
-  --cor-card: #FFFFFF;
-  --cor-borda: #0A3663;
-  --cor-apoio: #FFC107;
+  --cor-fundo: #0F172A;
+  --cor-card: #1E293B;
+  --cor-texto: #FFFFFF;
+  --cor-subtexto: #94A3B8;
+  --cor-destaque: #38BDF8;
+  --cor-alerta-fundo: #450A0A;
+  --cor-alerta-texto: #FECACA;
+  --cor-alerta-borda: #EF4444;
 }
 
 * {
@@ -14,7 +15,9 @@
   padding: 0;
 }
 
+/* Habilita o efeito de catálogo (trava cartão a cartão) no próprio navegador */
 html {
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -22,163 +25,112 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: Arial, sans-serif;
-  font-size: 1.375rem; /* 22px */
-  line-height: 1.6;
-  padding: 15px;
-  max-width: 700px;
-  margin: 0 auto;
+  padding-top: 80px; /* Espaço para o cabeçalho fixo */
 }
 
-header {
-  background-color: var(--cor-primaria);
-  color: #FFFFFF;
-  padding: 20px;
-  text-align: center;
-  border-radius: 16px 16px 0 0;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
-}
-
-.subtitulo {
-  font-size: 1.2rem;
-}
-
-/* Container Estilo Catálogo Vertical */
-.catalogo-container {
-  height: 70vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  border: 4px solid var(--cor-primaria);
-  border-top: none;
-  border-bottom: none;
-  background-color: #DDE3EA;
-  padding: 15px;
-}
-
-/* Suavização de Rolamento */
-.catalogo-container::-webkit-scrollbar {
-  width: 14px;
-}
-
-.catalogo-container::-webkit-scrollbar-thumb {
-  background-color: var(--cor-primaria);
-  border-radius: 8px;
-}
-
-/* Cards do Catálogo */
-.card {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  background-color: var(--cor-card);
-  border: 3px solid var(--cor-borda);
-  border-radius: 16px;
-  padding: 25px;
-  margin-bottom: 40px;
-  min-height: 62vh;
+/* Cabeçalho fixo no topo */
+.topo-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #020617;
+  border-bottom: 3px solid var(--cor-destaque);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  animation: subir 0.6s ease-out;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
-@keyframes subir {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.topo-fixo h1 {
+  font-size: 1.5rem;
+  color: var(--cor-destaque);
 }
 
-.badge {
+.topo-fixo p {
+  font-size: 0.95rem;
+  color: var(--cor-subtexto);
+}
+
+/* Cada cartão do catálogo ocupa a tela inteira */
+.card-item {
+  height: calc(100dvh - 80px); /* dvh adapta melhor para navegadores de celular */
+  min-height: 500px; /* Evita cortar conteúdo em telas pequenas */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 30px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #1E293B;
+}
+
+.tag-numero {
   display: inline-block;
-  align-self: flex-start;
-  background-color: var(--cor-primaria);
-  color: #FFFFFF;
+  background-color: var(--cor-destaque);
+  color: #0F172A;
   font-weight: bold;
   font-size: 1.1rem;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  width: fit-content;
+  margin-bottom: 15px;
 }
 
 h2 {
-  color: var(--cor-primaria);
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #F8FAFC;
+}
+
+p {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #E2E8F0;
 }
 
 ul {
   margin-left: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 li {
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #CBD5E1;
 }
 
 .alerta {
-  background-color: #FFEBEE;
-  border-left: 8px solid var(--cor-destaque);
-  color: #5C0000;
-  padding: 12px;
-  border-radius: 6px;
+  background-color: var(--cor-alerta-fundo);
+  border-left: 6px solid var(--cor-alerta-borda);
+  color: var(--cor-alerta-texto);
+  padding: 15px;
+  border-radius: 8px;
   font-weight: bold;
-  margin-top: 10px;
-}
-
-.botao-proximo {
-  display: block;
-  text-align: center;
-  background-color: #E8EEF5;
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-primaria);
-  padding: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-.botao-proximo:focus,
-.botao-proximo:hover {
-  background-color: var(--cor-primaria);
-  color: #FFFFFF;
-  outline: 3px solid var(--cor-apoio);
+  font-size: 1.2rem;
 }
 
 .botao-acao {
   display: block;
   width: 100%;
-  background-color: var(--cor-primaria);
-  color: #FFFFFF;
+  background-color: var(--cor-destaque);
+  color: #0F172A;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  padding: 16px;
-  border-radius: 10px;
-  border: none;
+  padding: 18px;
+  border-radius: 12px;
   text-decoration: none;
   margin-top: 15px;
 }
 
 .botao-acao:focus,
 .botao-acao:hover {
-  background-color: #041B33;
-  outline: 4px solid var(--cor-apoio);
-}
-
-footer {
-  background-color: var(--cor-primaria);
-  color: #FFFFFF;
-  text-align: center;
-  padding: 15px;
-  border-radius: 0 0 16px 16px;
-  font-size: 1rem;
+  background-color: #7DD3FC;
+  outline: 4px solid #FFFFFF;
 }
