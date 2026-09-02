@@ -1,253 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navegar com Segurança</title>
-
-    <!-- Ligação com o arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Sênior - Segurança Digital</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <h1>🔒 Navegar com Segurança</h1>
+  <!-- Hack do Modo Alto Contraste via Checkbox -->
+  <input type="checkbox" id="toggle-contraste" class="visually-hidden">
 
-            <nav>
-                <a href="#inicio">Início</a>
-                <a href="#dicas">Dicas</a>
-                <a href="#direitos">Seus direitos</a>
-                <a href="#golpes">Golpes</a>
-            </nav>
-        </div>
+  <!-- Hack das Abas via Radio Buttons -->
+  <input type="radio" name="app-tabs" id="radio-home" checked class="visually-hidden">
+  <input type="radio" name="app-tabs" id="radio-aulas" class="visually-hidden">
+  <input type="radio" name="app-tabs" id="radio-simulador" class="visually-hidden">
+  <input type="radio" name="app-tabs" id="radio-glossario" class="visually-hidden">
+  <input type="radio" name="app-tabs" id="radio-emergencia" class="visually-hidden">
+
+  <div class="app-wrapper">
+
+    <!-- BARRA SUPERIOR DE ACESSIBILIDADE -->
+    <div class="top-bar">
+      <span>Acessibilidade Digital</span>
+      <label for="toggle-contraste" class="btn-contraste">◐ Mudar Contraste</label>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="main-header">
+      <h1>Guia Sênior Seguro</h1>
+      <p>Sua plataforma de proteção, aprendizado e autonomia na internet</p>
     </header>
 
-    <main>
+    <!-- NAVEGAÇÃO DE ABAS -->
+    <nav class="tab-nav">
+      <label for="radio-home" class="tab-btn">🏠 Início</label>
+      <label for="radio-aulas" class="tab-btn">📚 Aulas</label>
+      <label for="radio-simulador" class="tab-btn">🎯 Teste Prático</label>
+      <label for="radio-glossario" class="tab-btn">📖 Dicionário</label>
+      <label for="radio-emergencia" class="tab-btn danger">🚨 Socorro</label>
+    </nav>
 
-        <section id="inicio" class="banner">
-            <div class="container">
-                <span>🛡️ Segurança digital</span>
+    <!-- CONTEÚDO PRINCIPAL DAS ABAS -->
+    <main class="tab-content">
 
-                <h2>Use a internet com mais segurança e tranquilidade</h2>
+      <!-- ABA 1: INÍCIO -->
+      <section id="sec-home">
+        <div class="card">
+          <h2 class="card-title">Bem-vindo(a) ao Seu Guia!</h2>
+          <p>A tecnologia nos permite falar com a família, pagar contas e fazer compras sem sair de casa. Este aplicativo foi criado para ajudar você a navegar com total tranquilidade.</p>
+          
+          <div class="box-sucesso">
+            <strong>Três Regras de Ouro:</strong>
+            <ol style="margin-top: 10px;">
+              <li><strong>Calma:</strong> Golpistas têm sempre pressa. Respire fundo.</li>
+              <li><strong>Silêncio:</strong> Nunca diga senhas ou códigos por telefone.</li>
+              <li><strong>Confirmação:</strong> Ligue para o seu familiar antes de fazer transações.</li>
+            </ol>
+          </div>
+        </div>
 
-                <p>
-                    Aprenda a reconhecer golpes, proteger suas informações
-                    e navegar com mais segurança.
-                </p>
+        <div class="card">
+          <h2 class="card-title"><span class="badge-dica">Dica do Dia</span> WhatsApp Protegido</h2>
+          <p>Você sabia que o WhatsApp pode ter uma senha secreta de 6 números? Essa ferramenta impede que estranhos roubem sua conta.</p>
+          <p style="margin-top: 15px;"><strong>Acesse a aba "Aulas" no menu acima para aprender como ativar!</strong></p>
+        </div>
+      </section>
 
-                <a href="#ajuda" class="botao">Preciso de ajuda</a>
+      <!-- ABA 2: AULAS E CONTEÚDO -->
+      <section id="sec-aulas">
+        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Módulos de Aprendizado</h2>
+
+        <details open>
+          <summary>Módulo 1: O Golpe do "Falso Parente"</summary>
+          <div class="details-body">
+            <p><strong>Como funciona:</strong> Alguém envia uma mensagem no WhatsApp com a foto de um filho ou neto dizendo que trocou de número e precisa de um Pix urgente para pagar um imprevisto.</p>
+            <div class="box-alerta">
+              O que fazer? NUNCA envie o dinheiro. Abra a agenda do celular e ligue para o número antigo da pessoa para confirmar.
             </div>
-        </section>
+          </div>
+        </details>
 
-
-        <section id="dicas" class="secao">
-            <div class="container">
-
-                <h2>01. Dicas importantes</h2>
-
-                <p>
-                    Pequenos cuidados podem fazer uma grande diferença.
-                </p>
-
-                <div class="cartoes">
-
-                    <article class="cartao">
-                        <div class="icone">🔑</div>
-                        <h3>Crie senhas fortes</h3>
-                        <p>
-                            Use senhas diferentes para suas contas.
-                            Evite datas de nascimento e informações fáceis
-                            de descobrir.
-                        </p>
-                    </article>
-
-                    <article class="cartao">
-                        <div class="icone">📱</div>
-                        <h3>Cuide do seu celular</h3>
-                        <p>
-                            Mantenha o celular atualizado e utilize uma
-                            senha ou bloqueio de tela.
-                        </p>
-                    </article>
-
-                    <article class="cartao">
-                        <div class="icone">🔗</div>
-                        <h3>Cuidado com links</h3>
-                        <p>
-                            Não clique em links suspeitos ou enviados por
-                            pessoas desconhecidas.
-                        </p>
-                    </article>
-
-                    <article class="cartao">
-                        <div class="icone">💳</div>
-                        <h3>Proteja seus dados</h3>
-                        <p>
-                            Nunca informe senhas, códigos ou dados bancários
-                            para pessoas desconhecidas.
-                        </p>
-                    </article>
-
-                </div>
+        <details>
+          <summary>Módulo 2: Falsa Ligação do Banco</summary>
+          <div class="details-body">
+            <p><strong>Como funciona:</strong> Uma pessoa liga fingindo ser da central de segurança do seu banco. Diz que houve uma compra suspeita e pede para você digitar sua senha ou instalar um aplicativo no celular.</p>
+            <div class="box-alerta">
+              O que fazer? Desligue o telefone na hora! Bancos reais NUNCA ligam pedindo senhas, códigos digitados ou instalação de programas.
             </div>
-        </section>
+          </div>
+        </details>
 
-
-        <section id="direitos" class="secao destaque">
-            <div class="container">
-
-                <h2>02. Você tem direitos na internet</h2>
-
-                <p>
-                    Seus dados e sua privacidade também precisam ser
-                    respeitados no ambiente digital.
-                </p>
-
-                <div class="direitos">
-
-                    <article>
-                        <h3>🔐 Privacidade</h3>
-                        <p>
-                            Você tem direito de saber como seus dados pessoais
-                            são utilizados.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>📋 Informação clara</h3>
-                        <p>
-                            Empresas devem apresentar informações claras sobre
-                            seus serviços.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>🛡️ Proteção de dados</h3>
-                        <p>
-                            A legislação brasileira possui regras para proteger
-                            seus dados pessoais.
-                        </p>
-                    </article>
-
-                </div>
-
-                <div class="aviso">
-                    <strong>💡 Lembre-se:</strong>
-                    <p>
-                        No Brasil, a Lei Geral de Proteção de Dados (LGPD)
-                        estabelece regras para o tratamento de dados pessoais.
-                    </p>
-                </div>
-
+        <details>
+          <summary>Módulo 3: Senhas Fortes e Seguras</summary>
+          <div class="details-body">
+            <p>Evite datas de aniversário ou sequências fáceis como 123456.</p>
+            <p><strong>Dica de ouro:</strong> Crie uma frase com um ano e um símbolo.</p>
+            <div class="box-sucesso">
+              Exemplo de senha forte: <strong>MeuCafe2026!</strong>
             </div>
-        </section>
+          </div>
+        </details>
 
+        <details>
+          <summary>Módulo 4: Compras Online e Pix</summary>
+          <div class="details-body">
+            <p>Antes de digitar a senha do Pix, leia sempre os dados que aparecem na tela:</p>
+            <ul>
+              <li><strong>Nome do destinatário:</strong> É realmente a pessoa ou loja que você quer pagar?</li>
+              <li><strong>Valor:</strong> Os centavos estão corretos?</li>
+              <li><strong>Descontos milagrosos:</strong> Se uma TV custa R$ 3.000 e está por R$ 300, é golpe!</li>
+            </ul>
+          </div>
+        </details>
+      </section>
 
-        <section id="golpes" class="secao">
-            <div class="container">
+      <!-- ABA 3: SIMULADOR PRÁTICO -->
+      <section id="sec-simulador">
+        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Treine seus Olhos: Isto é Golpe?</h2>
+        <p>Analise as situações abaixo e toque nas respostas para testar seu conhecimento:</p>
 
-                <h2>03. Como identificar golpes?</h2>
-
-                <p>
-                    Desconfie quando uma mensagem tentar assustar ou
-                    pressionar você.
-                </p>
-
-                <div class="golpes">
-
-                    <article>
-                        <h3>🚨 "Sua conta será bloqueada!"</h3>
-                        <p>
-                            Mensagens que causam medo e exigem uma ação
-                            imediata podem ser tentativas de golpe.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>💰 "Você ganhou um prêmio!"</h3>
-                        <p>
-                            Desconfie de prêmios que você não estava esperando,
-                            principalmente quando pedem dinheiro ou dados.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>👤 "Sou seu familiar, preciso de dinheiro!"</h3>
-                        <p>
-                            Confirme a identidade da pessoa antes de realizar
-                            qualquer transferência.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>📞 "Precisamos confirmar seus dados."</h3>
-                        <p>
-                            Nunca informe senhas ou códigos de segurança
-                            por telefone ou mensagem.
-                        </p>
-                    </article>
-
-                </div>
-
+        <div class="card" style="margin-top: 20px;">
+          <h3 class="card-title">Caso 1: Mensagem no WhatsApp</h3>
+          
+          <div class="chat-simulador">
+            <div class="balao-mensagem">
+              "Oi mãe! Troquei de número, salva aí. Tive um problema com o banco e preciso pagar uma conta de R$ 850 hoje. Pode me transferir no Pix?"
             </div>
-        </section>
+          </div>
 
+          <p><strong>O que você deve fazer?</strong></p>
 
-        <section id="ajuda" class="ajuda">
-            <div class="container">
-
-                <h2>🆘 Algo parece estranho?</h2>
-
-                <p>
-                    Não tenha vergonha de pedir ajuda. Converse com uma pessoa
-                    de confiança antes de fornecer seus dados ou realizar
-                    um pagamento.
-                </p>
-
-                <div class="passos">
-
-                    <article>
-                        <strong>1</strong>
-                        <h3>Pare</h3>
-                        <p>
-                            Não clique e não responda imediatamente.
-                        </p>
-                    </article>
-
-                    <article>
-                        <strong>2</strong>
-                        <h3>Confira</h3>
-                        <p>
-                            Confirme a informação por outro canal.
-                        </p>
-                    </article>
-
-                    <article>
-                        <strong>3</strong>
-                        <h3>Peça ajuda</h3>
-                        <p>
-                            Converse com alguém de confiança.
-                        </p>
-                    </article>
-
-                </div>
-
+          <details style="margin-top: 15px;">
+            <summary style="font-size: 18px; background-color: var(--bg-perigo); color: var(--cor-perigo);">A) Fazer o Pix imediatamente para ajudar.</summary>
+            <div class="details-body">
+              <span style="color: var(--cor-perigo); font-weight: bold;">ERRADO!</span> Nunca faça transferências com pressa. É assim que os golpistas agem.
             </div>
-        </section>
+          </details>
+
+          <details style="margin-top: 10px;">
+            <summary style="font-size: 18px; background-color: var(--bg-sucesso); color: var(--cor-sucesso);">B) Liguei para o número antigo do meu filho antes.</summary>
+            <div class="details-body">
+              <span style="color: var(--cor-sucesso); font-weight: bold;">CORRETO! 🎉</span> Ligando para o número antigo, você descobre que seu filho está bem e não mudou de telefone.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ABA 4: GLOSSÁRIO DIGITAL -->
+      <section id="sec-glossario">
+        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Dicionário do Mundo Digital</h2>
+        <p>Entenda os termos mais comuns sem complicação:</p>
+
+        <details>
+          <summary>Link / Endereço da Web</summary>
+          <div class="details-body">
+            É o texto azul sublinhado que, ao ser tocado, leva você para outra página na internet. Exemplo: <em>www.meubanco.com.br</em>
+          </div>
+        </details>
+
+        <details>
+          <summary>Pix</summary>
+          <div class="details-body">
+            Forma de enviar dinheiro de um banco para outro de forma instantânea, funcionando qualquer dia e horário.
+          </div>
+        </details>
+
+        <details>
+          <summary>Código SMS</summary>
+          <div class="details-body">
+            Uma mensagem de texto enviada para seu celular com 4 ou 6 números. Funciona como uma chave de segurança. <strong>Nunca passe esse número para ninguém!</strong>
+          </div>
+        </details>
+
+        <details>
+          <summary>Download / Baixar</summary>
+          <div class="details-body">
+            Ação de puxar um arquivo, foto ou aplicativo da internet para dentro da memória do seu celular.
+          </div>
+        </details>
+      </section>
+
+      <!-- ABA 5: EMERGÊNCIA -->
+      <section id="sec-emergencia">
+        <div class="box-alerta" style="font-size: 24px; text-align: center;">
+          🚨 Central de Emergência 🚨
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Caiu em um golpe ou passou a senha por engano?</h3>
+          <p>Não se envergonhe, isso pode acontecer com qualquer pessoa. <strong>Mantenha a calma e siga estes 4 passos rápidos:</strong></p>
+
+          <ol style="margin-top: 20px; font-weight: bold;">
+            <li style="color: var(--cor-perigo);">Ligue para o seu Banco Imediatamente</li>
+            <p style="font-weight: normal; margin-bottom: 15px;">Procure o número de telefone que fica impresso no verso do seu cartão de plástico. Peça o bloqueio dos aplicativos e cartões.</p>
+
+            <li style="color: var(--cor-perigo);">Avise um Familiar de Confiança</li>
+            <p style="font-weight: normal; margin-bottom: 15px;">Diga o que aconteceu para que alguém possa acompanhar você nos próximos passos.</p>
+
+            <li style="color: var(--cor-perigo);">Registre um Boletim de Ocorrência (B.O.)</li>
+            <p style="font-weight: normal; margin-bottom: 15px;">Vá até a delegacia mais próxima ou peça ajuda para registrar pela internet.</p>
+
+            <li style="color: var(--cor-perigo);">Troque suas Senhas</li>
+            <p style="font-weight: normal;">Troque as senhas do seu e-mail principal e do aplicativo de mensagens.</p>
+          </ol>
+        </div>
+      </section>
 
     </main>
 
-
+    <!-- RODAPÉ -->
     <footer>
-        <div class="container">
-            <h3>Navegar com Segurança</h3>
-            <p>
-                Informação para uma internet mais segura e acessível.
-            </p>
-        </div>
+      <p><strong>Guia Sênior Seguro</strong> • Desenvolvido com foco em Acessibilidade</p>
+      <p style="font-size: 16px; margin-top: 5px;">Construído puramente com HTML5 e CSS3</p>
     </footer>
+
+  </div>
 
 </body>
 </html>
