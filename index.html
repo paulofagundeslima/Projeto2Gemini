@@ -3,218 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Sênior - Segurança Digital</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Lembrete de Remédios Sênior</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 22px;
+      background-color: #f4f6f9;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 { color: #0f2c59; text-align: center; font-size: 28px; }
+    .card {
+      border: 3px solid #cbd5e1;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background-color: #fff;
+    }
+    .horario {
+      background-color: #d97706;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .btn-ligar {
+      display: block;
+      width: 100%;
+      background-color: #166534;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .btn-emergencia {
+      background-color: #991b1b;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Hack do Modo Alto Contraste via Checkbox -->
-  <input type="checkbox" id="toggle-contraste" class="visually-hidden">
+  <div class="container">
+    <h1>💊 Meus Remédios do Dia</h1>
 
-  <!-- Hack das Abas via Radio Buttons -->
-  <input type="radio" name="app-tabs" id="radio-home" checked class="visually-hidden">
-  <input type="radio" name="app-tabs" id="radio-aulas" class="visually-hidden">
-  <input type="radio" name="app-tabs" id="radio-simulador" class="visually-hidden">
-  <input type="radio" name="app-tabs" id="radio-glossario" class="visually-hidden">
-  <input type="radio" name="app-tabs" id="radio-emergencia" class="visually-hidden">
-
-  <div class="app-wrapper">
-
-    <!-- BARRA SUPERIOR DE ACESSIBILIDADE -->
-    <div class="top-bar">
-      <span>Acessibilidade Digital</span>
-      <label for="toggle-contraste" class="btn-contraste">◐ Mudar Contraste</label>
+    <div class="card">
+      <span class="horario">08:00 AM</span>
+      <h3 style="margin: 10px 0 5px 0;">Remédio de Pressão</h3>
+      <p>1 Comprimido com água após o café.</p>
     </div>
 
-    <!-- CABEÇALHO -->
-    <header class="main-header">
-      <h1>Guia Sênior Seguro</h1>
-      <p>Sua plataforma de proteção, aprendizado e autonomia na internet</p>
-    </header>
+    <div class="card">
+      <span class="horario">12:00 PM</span>
+      <h3 style="margin: 10px 0 5px 0;">Vitamina D</h3>
+      <p>1 Cápsula durante o almoço.</p>
+    </div>
 
-    <!-- NAVEGAÇÃO DE ABAS -->
-    <nav class="tab-nav">
-      <label for="radio-home" class="tab-btn">🏠 Início</label>
-      <label for="radio-aulas" class="tab-btn">📚 Aulas</label>
-      <label for="radio-simulador" class="tab-btn">🎯 Teste Prático</label>
-      <label for="radio-glossario" class="tab-btn">📖 Dicionário</label>
-      <label for="radio-emergencia" class="tab-btn danger">🚨 Socorro</label>
-    </nav>
+    <div class="card">
+      <span class="horario">20:00 PM</span>
+      <h3 style="margin: 10px 0 5px 0;">Remédio para Diabetes</h3>
+      <p>1 Comprimido após o jantar.</p>
+    </div>
 
-    <!-- CONTEÚDO PRINCIPAL DAS ABAS -->
-    <main class="tab-content">
-
-      <!-- ABA 1: INÍCIO -->
-      <section id="sec-home">
-        <div class="card">
-          <h2 class="card-title">Bem-vindo(a) ao Seu Guia!</h2>
-          <p>A tecnologia nos permite falar com a família, pagar contas e fazer compras sem sair de casa. Este aplicativo foi criado para ajudar você a navegar com total tranquilidade.</p>
-          
-          <div class="box-sucesso">
-            <strong>Três Regras de Ouro:</strong>
-            <ol style="margin-top: 10px;">
-              <li><strong>Calma:</strong> Golpistas têm sempre pressa. Respire fundo.</li>
-              <li><strong>Silêncio:</strong> Nunca diga senhas ou códigos por telefone.</li>
-              <li><strong>Confirmação:</strong> Ligue para o seu familiar antes de fazer transações.</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title"><span class="badge-dica">Dica do Dia</span> WhatsApp Protegido</h2>
-          <p>Você sabia que o WhatsApp pode ter uma senha secreta de 6 números? Essa ferramenta impede que estranhos roubem sua conta.</p>
-          <p style="margin-top: 15px;"><strong>Acesse a aba "Aulas" no menu acima para aprender como ativar!</strong></p>
-        </div>
-      </section>
-
-      <!-- ABA 2: AULAS E CONTEÚDO -->
-      <section id="sec-aulas">
-        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Módulos de Aprendizado</h2>
-
-        <details open>
-          <summary>Módulo 1: O Golpe do "Falso Parente"</summary>
-          <div class="details-body">
-            <p><strong>Como funciona:</strong> Alguém envia uma mensagem no WhatsApp com a foto de um filho ou neto dizendo que trocou de número e precisa de um Pix urgente para pagar um imprevisto.</p>
-            <div class="box-alerta">
-              O que fazer? NUNCA envie o dinheiro. Abra a agenda do celular e ligue para o número antigo da pessoa para confirmar.
-            </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>Módulo 2: Falsa Ligação do Banco</summary>
-          <div class="details-body">
-            <p><strong>Como funciona:</strong> Uma pessoa liga fingindo ser da central de segurança do seu banco. Diz que houve uma compra suspeita e pede para você digitar sua senha ou instalar um aplicativo no celular.</p>
-            <div class="box-alerta">
-              O que fazer? Desligue o telefone na hora! Bancos reais NUNCA ligam pedindo senhas, códigos digitados ou instalação de programas.
-            </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>Módulo 3: Senhas Fortes e Seguras</summary>
-          <div class="details-body">
-            <p>Evite datas de aniversário ou sequências fáceis como 123456.</p>
-            <p><strong>Dica de ouro:</strong> Crie uma frase com um ano e um símbolo.</p>
-            <div class="box-sucesso">
-              Exemplo de senha forte: <strong>MeuCafe2026!</strong>
-            </div>
-          </div>
-        </details>
-
-        <details>
-          <summary>Módulo 4: Compras Online e Pix</summary>
-          <div class="details-body">
-            <p>Antes de digitar a senha do Pix, leia sempre os dados que aparecem na tela:</p>
-            <ul>
-              <li><strong>Nome do destinatário:</strong> É realmente a pessoa ou loja que você quer pagar?</li>
-              <li><strong>Valor:</strong> Os centavos estão corretos?</li>
-              <li><strong>Descontos milagrosos:</strong> Se uma TV custa R$ 3.000 e está por R$ 300, é golpe!</li>
-            </ul>
-          </div>
-        </details>
-      </section>
-
-      <!-- ABA 3: SIMULADOR PRÁTICO -->
-      <section id="sec-simulador">
-        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Treine seus Olhos: Isto é Golpe?</h2>
-        <p>Analise as situações abaixo e toque nas respostas para testar seu conhecimento:</p>
-
-        <div class="card" style="margin-top: 20px;">
-          <h3 class="card-title">Caso 1: Mensagem no WhatsApp</h3>
-          
-          <div class="chat-simulador">
-            <div class="balao-mensagem">
-              "Oi mãe! Troquei de número, salva aí. Tive um problema com o banco e preciso pagar uma conta de R$ 850 hoje. Pode me transferir no Pix?"
-            </div>
-          </div>
-
-          <p><strong>O que você deve fazer?</strong></p>
-
-          <details style="margin-top: 15px;">
-            <summary style="font-size: 18px; background-color: var(--bg-perigo); color: var(--cor-perigo);">A) Fazer o Pix imediatamente para ajudar.</summary>
-            <div class="details-body">
-              <span style="color: var(--cor-perigo); font-weight: bold;">ERRADO!</span> Nunca faça transferências com pressa. É assim que os golpistas agem.
-            </div>
-          </details>
-
-          <details style="margin-top: 10px;">
-            <summary style="font-size: 18px; background-color: var(--bg-sucesso); color: var(--cor-sucesso);">B) Liguei para o número antigo do meu filho antes.</summary>
-            <div class="details-body">
-              <span style="color: var(--cor-sucesso); font-weight: bold;">CORRETO! 🎉</span> Ligando para o número antigo, você descobre que seu filho está bem e não mudou de telefone.
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- ABA 4: GLOSSÁRIO DIGITAL -->
-      <section id="sec-glossario">
-        <h2 style="margin-bottom: 20px; color: var(--cor-secundaria);">Dicionário do Mundo Digital</h2>
-        <p>Entenda os termos mais comuns sem complicação:</p>
-
-        <details>
-          <summary>Link / Endereço da Web</summary>
-          <div class="details-body">
-            É o texto azul sublinhado que, ao ser tocado, leva você para outra página na internet. Exemplo: <em>www.meubanco.com.br</em>
-          </div>
-        </details>
-
-        <details>
-          <summary>Pix</summary>
-          <div class="details-body">
-            Forma de enviar dinheiro de um banco para outro de forma instantânea, funcionando qualquer dia e horário.
-          </div>
-        </details>
-
-        <details>
-          <summary>Código SMS</summary>
-          <div class="details-body">
-            Uma mensagem de texto enviada para seu celular com 4 ou 6 números. Funciona como uma chave de segurança. <strong>Nunca passe esse número para ninguém!</strong>
-          </div>
-        </details>
-
-        <details>
-          <summary>Download / Baixar</summary>
-          <div class="details-body">
-            Ação de puxar um arquivo, foto ou aplicativo da internet para dentro da memória do seu celular.
-          </div>
-        </details>
-      </section>
-
-      <!-- ABA 5: EMERGÊNCIA -->
-      <section id="sec-emergencia">
-        <div class="box-alerta" style="font-size: 24px; text-align: center;">
-          🚨 Central de Emergência 🚨
-        </div>
-
-        <div class="card">
-          <h3 class="card-title">Caiu em um golpe ou passou a senha por engano?</h3>
-          <p>Não se envergonhe, isso pode acontecer com qualquer pessoa. <strong>Mantenha a calma e siga estes 4 passos rápidos:</strong></p>
-
-          <ol style="margin-top: 20px; font-weight: bold;">
-            <li style="color: var(--cor-perigo);">Ligue para o seu Banco Imediatamente</li>
-            <p style="font-weight: normal; margin-bottom: 15px;">Procure o número de telefone que fica impresso no verso do seu cartão de plástico. Peça o bloqueio dos aplicativos e cartões.</p>
-
-            <li style="color: var(--cor-perigo);">Avise um Familiar de Confiança</li>
-            <p style="font-weight: normal; margin-bottom: 15px;">Diga o que aconteceu para que alguém possa acompanhar você nos próximos passos.</p>
-
-            <li style="color: var(--cor-perigo);">Registre um Boletim de Ocorrência (B.O.)</li>
-            <p style="font-weight: normal; margin-bottom: 15px;">Vá até a delegacia mais próxima ou peça ajuda para registrar pela internet.</p>
-
-            <li style="color: var(--cor-perigo);">Troque suas Senhas</li>
-            <p style="font-weight: normal;">Troque as senhas do seu e-mail principal e do aplicativo de mensagens.</p>
-          </ol>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer>
-      <p><strong>Guia Sênior Seguro</strong> • Desenvolvido com foco em Acessibilidade</p>
-      <p style="font-size: 16px; margin-top: 5px;">Construído puramente com HTML5 e CSS3</p>
-    </footer>
-
+    <h2 style="margin-top: 30px; color: #0f2c59;">📞 Discagem Rápida</h2>
+    
+    <a href="tel:190" class="btn-ligar btn-emergencia">🚨 Ligar para Polícia (190)</a>
+    <a href="tel:192" class="btn-ligar btn-emergencia">🚑 Ligar para SAMU (192)</a>
+    <a href="tel:193" class="btn-ligar btn-emergencia">🚒 Ligar Bombeiros (193)</a>
   </div>
 
 </body>
