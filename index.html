@@ -3,61 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Segurança Digital</title>
+  <title>Segurança Digital para a Terceira Idade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Guia de Segurança Digital</h1>
-    <p class="subtitulo">Deslize para cima para ver os cards do catálogo</p>
+  <header class="cabecalho">
+    <nav class="menu-navegacao" aria-label="Navegação principal">
+      <a href="#inicio" class="link-menu">Início</a>
+      <a href="#dicas" class="link-menu">Dicas</a>
+      <a href="#direitos" class="link-menu">Direitos</a>
+      <a href="#golpes" class="link-menu">Identificar Golpes</a>
+    </nav>
   </header>
 
-  <main class="catalogo-container">
+  <main>
+    <section id="inicio" class="banner-inicial">
+      <h1 class="titulo-principal">Navegue na Internet com Segurança</h1>
+      <p class="texto-banner">Aprenda a proteger seus dados, reconhecer fraudes e exercer seus direitos no ambiente digital.</p>
+      <a href="#ajuda" class="botao-ajuda">Precisa de Ajuda Rápida? Clique Aqui</a>
+    </section>
 
-    <section class="card" id="card-1">
-      <span class="badge">Dica 01</span>
-      <h2>1. Mensagens e Links Suspeitos</h2>
-      <p>Bancos e empresas não pedem senhas nem códigos por WhatsApp ou telefone.</p>
-      <ul>
-        <li>Nunca clique em links recebidos de números desconhecidos.</li>
-        <li>Na dúvida, ligue diretamente para o número oficial da empresa.</li>
-      </ul>
-      <div class="alerta">
-        Atenção: Se a mensagem parecer urgente ou cobrar ação imediata, desconfie!
+    <section id="dicas" class="secao-conteudo">
+      <h2 class="titulo-secao">Dicas Importantes de Segurança</h2>
+      <div class="grade-cartoes">
+        <article class="cartao">
+          <h3>Crie Senhas Fortes</h3>
+          <p>Misture letras, números e símbolos. Evite usar datas de aniversário ou sequências simples como 123456.</p>
+        </article>
+        <article class="cartao">
+          <h3>Atenção aos Links</h3>
+          <p>Nunca clique em links recebidos por mensagem de números desconhecidos ou com ofertas muito vantajosas.</p>
+        </article>
+        <article class="cartao">
+          <h3>Mantenha o Celular Atualizado</h3>
+          <p>Aceite as atualizações do seu telefone e dos aplicativos para manter o sistema protegido contra vírus.</p>
+        </article>
       </div>
-      <a href="#card-2" class="botao-proximo" aria-label="Ir para a próxima dica">Próxima dica ⬇</a>
     </section>
 
-    <section class="card" id="card-2">
-      <span class="badge">Dica 02</span>
-      <h2>2. Criação de Senhas Seguras</h2>
-      <p>Uma boa senha protege suas contas de acessos não autorizados.</p>
-      <ul>
-        <li>Evite usar datas de nascimento ou nomes de parentes.</li>
-        <li>Misture letras, números e símbolos simples.</li>
-        <li>Anote suas senhas em um caderno físico guardado em local seguro.</li>
+    <section id="direitos" class="secao-conteudo secao-destaque">
+      <h2 class="titulo-secao">Seus Direitos na Internet</h2>
+      <ul class="lista-direitos">
+        <li><strong>Proteção de Dados (LGPD):</strong> Nenhum site ou empresa pode compartilhar suas informações bancárias ou pessoais sem a sua autorização.</li>
+        <li><strong>Direito ao Arrependimento:</strong> Compras feitas pela internet podem ser canceladas em até 7 dias sem cobrança de taxas.</li>
+        <li><strong>Atendimento Acessível:</strong> Canais de suporte devem ser claros e fáceis de usar para o público idoso.</li>
       </ul>
-      <a href="#card-3" class="botao-proximo" aria-label="Ir para a próxima dica">Próxima dica ⬇</a>
     </section>
 
-    <section class="card" id="card-3">
-      <span class="badge">Dica 03</span>
-      <h2>3. Compras e Pagamentos</h2>
-      <p>Mantenha suas finanças protegidas ao realizar pagamentos online.</p>
-      <ul>
-        <li>Dê preferência ao uso de cartão de crédito virtual para compras online.</li>
-        <li>Ao fazer um Pix, confira o nome de quem vai receber antes de confirmar.</li>
-      </ul>
-      <a href="tel:0800000000" class="botao-acao" aria-label="Pedir ajuda para um familiar ou suporte">
-        Precisa de ajuda? Clique para ligar
-      </a>
+    <section id="golpes" class="secao-conteudo">
+      <h2 class="titulo-secao">Como Identificar Golpes no Dia a Dia</h2>
+      <div class="grade-cartoes">
+        <article class="cartao cartao-alerta">
+          <h3>Falso Parente no WhatsApp</h3>
+          <p>Se alguém usar uma foto conhecida pedindo dinheiro urgente em um número novo, ligue para o número antigo da pessoa antes de fazer qualquer envio.</p>
+        </article>
+        <article class="cartao cartao-alerta">
+          <h3>Falsa Central do Banco</h3>
+          <p>O banco jamais liga pedindo sua senha, nem solicita transferências ou PIX para "cancelar" uma transação suspeita.</p>
+        </article>
+      </div>
     </section>
 
+    <section id="ajuda" class="secao-conteudo secao-ajuda">
+      <h2 class="titulo-secao">O que fazer em caso de emergência?</h2>
+      <p class="texto-ajuda">Se desconfiar de uma fraude ou transferir dinheiro por engano, entre em contato com o seu banco imediatamente e faça um Boletim de Ocorrência.</p>
+    </section>
   </main>
 
-  <footer>
-    <p>Conteúdo desenvolvido com foco em acessibilidade e leitura simples.</p>
+  <footer class="rodape">
+    <p>&copy; 2026 Guia de Segurança Digital. Conteúdo Educativo e Acessível.</p>
   </footer>
 
 </body>
