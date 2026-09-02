@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dicas de Segurança Digital</title>
+  <title>Guia Prático e Quiz de Segurança Digital</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     :root {
       --cor-fundo: #F8F9FA;
@@ -11,6 +12,7 @@
       --cor-texto: #111111;
       --cor-primaria: #003366;
       --cor-destaque: #C8102E;
+      --cor-sucesso: #1E7E34;
       --cor-foco: #FFD700;
       --fonte-principal: Arial, Helvetica, sans-serif;
     }
@@ -55,7 +57,7 @@
       background-color: var(--cor-primaria);
       color: #FFFFFF;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
       border-bottom: 6px solid #001F3F;
       border-radius: 8px;
     }
@@ -74,10 +76,6 @@
     .topo h1 {
       font-size: 2.4rem;
       margin-bottom: 12px;
-    }
-
-    .topo p {
-      font-size: 1.2rem;
     }
 
     .grade-dicas {
@@ -101,15 +99,11 @@
       margin-bottom: 15px;
     }
 
-    .cartao p {
-      margin-bottom: 20px;
-    }
-
-    /* Botões de Leitura de Voz */
     .painel-botoes {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
+      margin-top: 15px;
     }
 
     .btn-voz {
@@ -117,13 +111,10 @@
       color: #FFFFFF;
       font-size: 1.1rem;
       font-weight: bold;
-      padding: 14px 20px;
+      padding: 12px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .btn-voz:hover, .btn-voz:focus {
@@ -135,65 +126,231 @@
       background-color: var(--cor-destaque);
     }
 
-    .btn-parar:hover, .btn-parar:focus {
-      background-color: #900C21;
+    /* Seção do Quiz de Perguntas */
+    .secao-perguntas {
+      margin-top: 40px;
+      background-color: #E9ECEF;
+      padding: 25px;
+      border-radius: 12px;
+      border: 3px solid var(--cor-primaria);
+    }
+
+    .secao-perguntas h2 {
+      color: var(--cor-primaria);
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .pergunta-box {
+      background-color: var(--cor-card);
+      border: 2px solid #CCC;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .opcoes-resposta {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .btn-opcao {
+      flex: 1;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid var(--cor-primaria);
+      border-radius: 8px;
+      background-color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    .btn-opcao:hover, .btn-opcao:focus {
+      background-color: #E2E8F0;
+      outline: 4px solid var(--cor-foco);
+    }
+
+    .resposta-feedback {
+      margin-top: 15px;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .resposta-correta {
+      background-color: #D4EDDA;
+      color: var(--cor-sucesso);
+      border: 2px solid var(--cor-sucesso);
+    }
+
+    .resposta-incorreta {
+      background-color: #F8D7DA;
+      color: var(--cor-destaque);
+      border: 2px solid var(--cor-destaque);
+    }
+
+    .ajuda-urgente {
+      margin-top: 40px;
+      background-color: #FFF3CD;
+      border: 3px solid #856404;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .botao-emergencia {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: var(--cor-destaque);
+      color: #FFFFFF;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .rodape {
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <a href="#conteudo-principal" class="pular-navegacao">Pular para o conteúdo</a>
+  <a href="#conteudo-principal" class="pular-navegacao">Pular para o conteúdo principal</a>
 
-  <div class="container">
-    <header class="topo">
-      <span class="tag-acessibilidade">Modo Leitura com Voz</span>
-      <h1>Segurança Digital Simplificada</h1>
-      <p>Clique nos botões abaixo de cada dica para ouvir a explicação em voz alta.</p>
-    </header>
+  <header class="topo">
+    <div class="container">
+      <span class="tag-acessibilidade">Acessibilidade Ativa com Voz</span>
+      <h1>Segurança na Internet</h1>
+      <p>Dicas simples e perguntas para testar seus conhecimentos.</p>
+    </div>
+  </header>
 
-    <main id="conteudo-principal" class="grade-dicas">
+  <main id="conteudo-principal" class="container">
+    
+    <!-- Dicas Principais -->
+    <section class="grade-dicas">
 
       <article class="cartao" id="dica-1">
-        <h2>1. Cuidado com Links Estranhos</h2>
-        <p id="texto-dica-1">Nunca clique em links recebidos por mensagens de números desconhecidos. Bancos e empresas sérias não pedem senhas ou dados pessoais por mensagem de texto ou WhatsApp.</p>
+        <h2>🔒 Golpe da Falsa Mensagem</h2>
+        <p>Bancos e lojas nunca pedem senhas ou códigos por SMS ou WhatsApp. Se receber pedidos urgentes de dinheiro, ligue diretamente para a pessoa para confirmar.</p>
         <div class="painel-botoes">
-          <button class="btn-voz" onclick="lerTexto('dica-1')">🔊 Ouvir esta dica</button>
-          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar voz</button>
+          <button class="btn-voz" onclick="lerTexto('dica-1')">🔊 Ouvir dica</button>
+          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar</button>
         </div>
       </article>
 
       <article class="cartao" id="dica-2">
-        <h2>2. Crie Senhas Fortes e Anote em Local Seguro</h2>
-        <p id="texto-dica-2">Evite usar datas de nascimento ou nomes de familiares. Crie senhas misturando letras e números. Se for difícil lembrar, é mais seguro anotar em um caderno em casa do que salvar no celular.</p>
+        <h2>🔑 Senhas Seguras e Fáceis</h2>
+        <p>Evite usar datas de nascimento. Crie frases simples com números ao final para aumentar a proteção de suas contas.</p>
         <div class="painel-botoes">
-          <button class="btn-voz" onclick="lerTexto('dica-2')">🔊 Ouvir esta dica</button>
-          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar voz</button>
+          <button class="btn-voz" onclick="lerTexto('dica-2')">🔊 Ouvir dica</button>
+          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar</button>
         </div>
       </article>
 
-    </main>
-  </div>
+    </section>
+
+    <!-- Seção de Perguntas e Respostas -->
+    <section class="secao-perguntas">
+      <h2>❓ Teste Seus Conhecimentos</h2>
+
+      <!-- Pergunta 1 -->
+      <article class="pergunta-box" id="perg-1">
+        <p class="enunciado"><strong>Pergunta 1:</strong> Se um parente enviar uma mensagem pedindo Pix urgente por um número novo, o que você deve fazer?</p>
+        <div class="painel-botoes">
+          <button class="btn-voz" onclick="lerPergunta('perg-1')">🔊 Ouvir Pergunta</button>
+        </div>
+        <div class="opcoes-resposta">
+          <button class="btn-opcao" onclick="responder('perg-1', false, 'Incorreto! Nunca envie dinheiro imediatamente. Sempre ligue antes para confirmar.')">A) Enviar o dinheiro na hora</button>
+          <button class="btn-opcao" onclick="responder('perg-1', true, 'Correto! Sempre ligue para o número antigo do parente antes de fazer qualquer transferência.')">B) Ligar para o parente para confirmar</button>
+        </div>
+        <div class="resposta-feedback" id="feedback-perg-1"></div>
+      </article>
+
+      <!-- Pergunta 2 -->
+      <article class="pergunta-box" id="perg-2">
+        <p class="enunciado"><strong>Pergunta 2:</strong> É seguro colocar a sua data de nascimento como senha do banco?</p>
+        <div class="painel-botoes">
+          <button class="btn-voz" onclick="lerPergunta('perg-2')">🔊 Ouvir Pergunta</button>
+        </div>
+        <div class="opcoes-resposta">
+          <button class="btn-opcao" onclick="responder('perg-2', true, 'Correto! Datas de nascimento são fáceis de adivinhar. Prefira usar frases com números.')">A) Não, é perigoso</button>
+          <button class="btn-opcao" onclick="responder('perg-2', false, 'Incorreto! Usar a data de nascimento facilita o trabalho de golpistas.')">B) Sim, é seguro</button>
+        </div>
+        <div class="resposta-feedback" id="feedback-perg-2"></div>
+      </article>
+
+      <!-- Pergunta 3 -->
+      <article class="pergunta-box" id="perg-3">
+        <p class="enunciado"><strong>Pergunta 3:</strong> O banco envia mensagens pedindo para você digitar sua senha no telefone?</p>
+        <div class="painel-botoes">
+          <button class="btn-voz" onclick="lerPergunta('perg-3')">🔊 Ouvir Pergunta</button>
+        </div>
+        <div class="opcoes-resposta">
+          <button class="btn-opcao" onclick="responder('perg-3', true, 'Correto! Bancos jamais pedem sua senha por telefone ou mensagem.')">A) Nunca pedem</button>
+          <button class="btn-opcao" onclick="responder('perg-3', false, 'Incorreto! Bancos de verdade nunca solicitam senhas em mensagens.')">B) Sim, pedem sempre</button>
+        </div>
+        <div class="resposta-feedback" id="feedback-perg-3"></div>
+      </article>
+
+    </section>
+
+    <!-- Contato de Emergência -->
+    <section class="ajuda-urgente">
+      <h2>Precisa de Ajuda Agora?</h2>
+      <p>Em caso de suspeita de fraude, entre em contato com o seu banco.</p>
+      <a href="tel:08000000000" class="botao-emergencia">📞 Ligar para o Banco</a>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Desenvolvido para garantir a sua segurança no mundo digital.</p>
+  </footer>
 
   <script>
     function lerTexto(idCartao) {
-      // Interrompe qualquer leitura que esteja acontecendo
       window.speechSynthesis.cancel();
-
       const cartao = document.getElementById(idCartao);
       const titulo = cartao.querySelector('h2').innerText;
-      const conteudo = cartao.querySelector('p').innerText;
-      
-      const textoCompleto = `${titulo}. ${conteudo}`;
+      const texto = cartao.querySelector('p').innerText;
 
-      const mensagem = new SpeechSynthesisUtterance(textoCompleto);
+      falar(`${titulo}. ${texto}`);
+    }
+
+    function lerPergunta(idPergunta) {
+      window.speechSynthesis.cancel();
+      const box = document.getElementById(idPergunta);
+      const enunciado = box.querySelector('.enunciado').innerText;
+      falar(enunciado);
+    }
+
+    function responder(idPergunta, ehCorreto, mensagemExplicativa) {
+      window.speechSynthesis.cancel();
+      const feedbackElement = document.getElementById(`feedback-${idPergunta}`);
       
-      // Configurações para português do Brasil
+      feedbackElement.style.display = 'block';
+      feedbackElement.innerText = mensagemExplicativa;
+
+      if (ehCorreto) {
+        feedbackElement.className = 'resposta-feedback resposta-correta';
+      } else {
+        feedbackElement.className = 'resposta-feedback resposta-incorreta';
+      }
+
+      falar(mensagemExplicativa);
+    }
+
+    function falar(texto) {
+      const mensagem = new SpeechSynthesisUtterance(texto);
       mensagem.lang = 'pt-BR';
-      
-      // Velocidade um pouco reduzida (0.9) para facilitar a compreensão de idosos
-      mensagem.rate = 0.9; 
-      
-      // Executa a leitura por voz
+      mensagem.rate = 0.85; // Velocidade bem pausada para facilidade de escuta
       window.speechSynthesis.speak(mensagem);
     }
 

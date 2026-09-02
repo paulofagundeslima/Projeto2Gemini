@@ -1,114 +1,251 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia Prático de Segurança Digital</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Variáveis globais para alto contraste e fácil manutenção */
+:root {
+  --cor-fundo: #F8F9FA;
+  --cor-card: #FFFFFF;
+  --cor-texto: #111111;
+  --cor-primaria: #003366;
+  --cor-destaque: #C8102E;
+  --cor-sucesso: #1E7E34;
+  --cor-foco: #FFD700;
+  --fonte-principal: Arial, Helvetica, sans-serif;
+}
 
-  <a href="#conteudo-principal" class="pular-navegacao">Pular para o conteúdo principal</a>
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <header class="topo">
-    <div class="container">
-      <span class="tag-acessibilidade">Acessibilidade Ativa com Voz</span>
-      <h1>Segurança na Internet</h1>
-      <p>Dicas simples para proteger seus dados e navegar com tranquilidade.</p>
-    </div>
-  </header>
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-principal);
+  font-size: 22px; /* Fonte ampliada para facilidade de leitura */
+  line-height: 1.6;
+}
 
-  <main id="conteudo-principal" class="container">
-    
-    <section class="grade-dicas">
+/* Atalho para leitores de tela e navegação por teclado */
+.pular-navegacao {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: var(--cor-texto);
+  color: #FFFFFF;
+  padding: 12px;
+  z-index: 100;
+  border-radius: 4px;
+  text-decoration: none;
+}
 
-      <article class="cartao" id="dica-1">
-        <header class="cartao-cabecalho">
-          <span class="icone" aria-hidden="true">🔒</span>
-          <h2>Golpe da Falsa Mensagem</h2>
-        </header>
-        <p>Bancos e lojas nunca pedem senhas ou códigos por SMS ou WhatsApp. Se receber pedidos urgentes de dinheiro, ligue diretamente para a pessoa para confirmar.</p>
-        <details>
-          <summary>Ver exemplo de golpe</summary>
-          <p class="detalhe-texto">Mensagem típica: "Oi pai, mudei de número, me manda um Pix urgente". Sempre confirme por chamada antes de transferir qualquer valor.</p>
-        </details>
-        
-        <div class="painel-botoes">
-          <button class="btn-voz" onclick="lerTexto('dica-1')">🔊 Ouvir dica</button>
-          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar</button>
-        </div>
-      </article>
+.pular-navegacao:focus {
+  top: 10px;
+  outline: 4px solid var(--cor-foco);
+}
 
-      <article class="cartao" id="dica-2">
-        <header class="cartao-cabecalho">
-          <span class="icone" aria-hidden="true">🔑</span>
-          <h2>Senhas Seguras e Fáceis</h2>
-        </header>
-        <p>Evite usar datas de nascimento. Crie frases simples que só você conhece e adicione números ao final para aumentar a proteção.</p>
-        <details>
-          <summary>Ver exemplo de senha</summary>
-          <p class="detalhe-texto">Exemplo forte: "MeuGatoTomComaPeixe2026!". É fácil de lembrar e muito difícil para invasores adivinharem.</p>
-        </details>
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-        <div class="painel-botoes">
-          <button class="btn-voz" onclick="lerTexto('dica-2')">🔊 Ouvir dica</button>
-          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar</button>
-        </div>
-      </article>
+/* Cabeçalho */
+.topo {
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 35px 20px;
+  border-bottom: 6px solid #001F3F;
+  border-radius: 8px;
+}
 
-      <article class="cartao" id="dica-3">
-        <header class="cartao-cabecalho">
-          <span class="icone" aria-hidden="true">📱</span>
-          <h2>Cuidado com Links</h2>
-        </header>
-        <p>Não clique em links de promoções exageradas enviadas por mensagens. Prefira entrar no site oficial digitando o endereço diretamente no navegador.</p>
-        <details>
-          <summary>Ver exemplo prático</summary>
-          <p class="detalhe-texto">Se a promoção oferece um produto caro de graça, geralmente é uma armadilha para roubar seus dados pessoais.</p>
-        </details>
+.tag-acessibilidade {
+  display: inline-block;
+  background-color: var(--cor-foco);
+  color: #000000;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
 
-        <div class="painel-botoes">
-          <button class="btn-voz" onclick="lerTexto('dica-3')">🔊 Ouvir dica</button>
-          <button class="btn-voz btn-parar" onclick="pararVoz()">⏹️ Parar</button>
-        </div>
-      </article>
+.topo h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
 
-    </section>
+.topo p {
+  font-size: 1.2rem;
+}
 
-    <section class="ajuda-urgente">
-      <h2>Precisa de Ajuda Agora?</h2>
-      <p>Em caso de suspeita de fraude, entre em contato imediatamente com o seu banco pelos canais oficiais do cartão.</p>
-      <a href="tel:08000000000" class="botao-emergencia">Ligar para a Central de Segurança</a>
-    </section>
+/* Grade de Cartões de Dicas */
+.grade-dicas {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
 
-  </main>
+.cartao {
+  background-color: var(--cor-card);
+  border: 3px solid var(--cor-primaria);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
 
-  <footer class="rodape">
-    <p>Desenvolvido para garantir a sua segurança no mundo digital.</p>
-  </footer>
+.cartao h2 {
+  color: var(--cor-primaria);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
 
-  <script>
-    function lerTexto(idCartao) {
-      window.speechSynthesis.cancel();
+/* Botões de Leitura por Voz */
+.painel-botoes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
 
-      const cartao = document.getElementById(idCartao);
-      const titulo = cartao.querySelector('h2').innerText;
-      const textoPrincipal = cartao.querySelector('p').innerText;
-      const detalheTexto = cartao.querySelector('.detalhe-texto') ? cartao.querySelector('.detalhe-texto').innerText : '';
+.btn-voz {
+  background-color: var(--cor-primaria);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-      const falaCompleta = `${titulo}. ${textoPrincipal}. Exemplo prático: ${detalheTexto}`;
+.btn-voz:hover, 
+.btn-voz:focus {
+  background-color: #001F3F;
+  outline: 4px solid var(--cor-foco);
+}
 
-      const mensagem = new SpeechSynthesisUtterance(falaCompleta);
-      mensagem.lang = 'pt-BR';
-      mensagem.rate = 0.9;
+.btn-parar {
+  background-color: var(--cor-destaque);
+}
 
-      window.speechSynthesis.speak(mensagem);
-    }
+.btn-parar:hover, 
+.btn-parar:focus {
+  background-color: #900C21;
+}
 
-    function pararVoz() {
-      window.speechSynthesis.cancel();
-    }
-  </script>
+/* Seção do Quiz e Perguntas */
+.secao-perguntas {
+  margin-top: 40px;
+  background-color: #E9ECEF;
+  padding: 25px;
+  border-radius: 12px;
+  border: 3px solid var(--cor-primaria);
+}
 
-</body>
-</html>
+.secao-perguntas h2 {
+  color: var(--cor-primaria);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.pergunta-box {
+  background-color: var(--cor-card);
+  border: 2px solid #B0B0B0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.opcoes-resposta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-opcao {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: left;
+  border: 3px solid var(--cor-primaria);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.btn-opcao:hover, 
+.btn-opcao:focus {
+  background-color: #E2E8F0;
+  outline: 4px solid var(--cor-foco);
+}
+
+/* Feedback das Respostas */
+.resposta-feedback {
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+}
+
+.resposta-correta {
+  background-color: #D4EDDA;
+  color: var(--cor-sucesso);
+  border: 2px solid var(--cor-sucesso);
+}
+
+.resposta-incorreta {
+  background-color: #F8D7DA;
+  color: var(--cor-destaque);
+  border: 2px solid var(--cor-destaque);
+}
+
+/* Bloco de Ajuda e Emergência */
+.ajuda-urgente {
+  margin-top: 40px;
+  background-color: #FFF3CD;
+  border: 3px solid #856404;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ajuda-urgente h2 {
+  color: #856404;
+  margin-bottom: 10px;
+}
+
+.botao-emergencia {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+  padding: 16px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+.botao-emergencia:hover, 
+.botao-emergencia:focus {
+  background-color: #900C21;
+  outline: 4px solid var(--cor-foco);
+}
+
+/* Rodapé */
+.rodape {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  font-size: 1rem;
+}
