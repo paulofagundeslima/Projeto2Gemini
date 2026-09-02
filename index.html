@@ -3,42 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dicas de Segurança Digital</title>
+  <title>Guia Prático de Segurança Digital</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="cabecalho">
-    <h1>Guia de Segurança Digital</h1>
-    <p>Dicas simples para navegar na internet com tranquilidade.</p>
+  <a href="#conteudo-principal" class="pular-navegacao">Pular para o conteúdo principal</a>
+
+  <header class="topo">
+    <div class="container">
+      <span class="tag-acessibilidade">Acessibilidade Ativa</span>
+      <h1>Segurança na Internet</h1>
+      <p>Dicas simples para proteger seus dados e navegar com tranquilidade.</p>
+    </div>
   </header>
 
-  <main class="conteudo-principal">
+  <main id="conteudo-principal" class="container">
     
-    <article class="cartao-dica">
-      <h2>1. Cuidado com Mensagens Suspeitas</h2>
-      <p>Nunca clique em links enviados por números desconhecidos ou e-mails estranhos, mesmo que digam ser do seu banco.</p>
-    </article>
+    <section class="grade-dicas">
 
-    <article class="cartao-dica">
-      <h2>2. Crie Senhas Fortes</h2>
-      <p>Evite usar datas de nascimento ou nomes de parentes. Misture letras, números e símbolos nas suas senhas.</p>
-    </article>
+      <article class="cartao">
+        <header class="cartao-cabecalho">
+          <span class="icone" aria-hidden="true">🔒</span>
+          <h2>Golpe da Falsa Mensagem</h2>
+        </header>
+        <p>Bancos e lojas nunca pedem senhas ou códigos por SMS ou WhatsApp. Se receber pedidos urgentes de dinheiro, ligue diretamente para a pessoa para confirmar.</p>
+        <details>
+          <summary>Ver exemplo de golpe</summary>
+          <p class="detalhe-texto">Mensagem típica: "Oi pai, mudei de número, me manda um Pix urgente". Sempre confirme por chamada antes de transferir qualquer valor.</p>
+        </details>
+      </article>
 
-    <article class="cartao-dica">
-      <h2>3. Não Compartilhe Senhas e Códigos</h2>
-      <p>Bancos e órgãos do governo nunca pedem sua senha ou o código de validação do WhatsApp por telefone ou mensagem.</p>
-    </article>
+      <article class="cartao">
+        <header class="cartao-cabecalho">
+          <span class="icone" aria-hidden="true">🔑</span>
+          <h2>Senhas Seguras e Fáceis</h2>
+        </header>
+        <p>Evite usar datas de nascimento. Crie frases simples que só você conhece e adicione números ao final para aumentar a proteção.</p>
+        <details>
+          <summary>Ver exemplo de senha</summary>
+          <p class="detalhe-texto">Exemplo forte: "MeuGatoTomComaPeixe2026!". É fácil de lembrar e muito difícil para invasores adivinharem.</p>
+        </details>
+      </article>
 
-    <article class="cartao-dica">
-      <h2>4. Na Dúvida, Peça Ajuda</h2>
-      <p>Se receber uma mensagem cobrando algo urgente ou oferecendo algo gratuito, confirme antes com um familiar de confiança.</p>
-    </article>
+      <article class="cartao">
+        <header class="cartao-cabecalho">
+          <span class="icone" aria-hidden="true">📱</span>
+          <h2>Cuidado com Links</h2>
+        </header>
+        <p>Não clique em links de promoções exageradas enviadas por mensagens. Prefira entrar no site oficial digitando o endereço diretamente no navegador.</p>
+        <details>
+          <summary>Ver exemplo prático</summary>
+          <p class="detalhe-texto">Se a promoção oferece um produto caro de graça, geralmente é uma armadilha para roubar seus dados pessoais.</p>
+        </details>
+      </article>
+
+    </section>
+
+    <section class="ajuda-urgente">
+      <h2>Precisa de Ajuda Agora?</h2>
+      <p>Em caso de suspeita de fraude, entre em contato imediatamente com o seu banco pelos canais oficiais do cartão.</p>
+      <a href="tel:08000000000" class="botao-emergencia">Ligar para a Central de Segurança</a>
+    </section>
 
   </main>
 
   <footer class="rodape">
-    <p>Navegue com atenção e mantenha seus dados protegidos!</p>
+    <p>Desenvolvido para garantir a sua segurança no mundo digital.</p>
   </footer>
 
 </body>
